@@ -2077,7 +2077,7 @@
                 const apoyosChecked = Array.from(document.querySelectorAll('input[name="joven-apoyos"]:checked'))
                                            .map(el => el.value);
                 
-                let apoyosTexto = 'Cap o per especificar a mà (Foment de l'autonomia)';
+                let apoyosTexto = 'Cap o per especificar a mà (Foment de l\'autonomia)';
                 if (apoyosChecked.length > 0 && !apoyosChecked.includes('Cap')) {
                     apoyosTexto = apoyosChecked.map(a => `Suport ${a}`).join(', ');
                 }
