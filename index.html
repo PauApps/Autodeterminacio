@@ -731,13 +731,14 @@
         }
 
         /* ==========================================================================
-           9. PESTAÑA 3: PARA FAMILIAS (TARJETAS Y TABLA RESPONSIVA)
+           9. PESTAÑA 3: PARA FAMILIAS (TARJETAS DE VIDA COTIDIANA Y CHECKLIST DE APOYOS)
            ========================================================================== */
         .familias-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
             margin-bottom: 2.5rem;
+            align-items: stretch;
         }
 
         @media (max-width: 768px) {
@@ -786,77 +787,6 @@
             color: var(--text-main);
             display: block;
             margin-bottom: 0.25rem;
-        }
-
-        /* Tabla de soportes adaptada a móviles */
-        .table-responsive-container {
-            width: 100%;
-            overflow-x: auto;
-            margin-top: 1rem;
-        }
-
-        .soportes-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 1.05rem;
-        }
-
-        .soportes-table th {
-            background-color: var(--primary);
-            color: #ffffff;
-            font-weight: 800;
-            padding: 1.2rem;
-            border: 1px solid var(--primary);
-        }
-
-        .soportes-table td {
-            padding: 1.2rem;
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-card);
-            vertical-align: top;
-        }
-
-        .soportes-table tr:nth-child(even) td {
-            background-color: var(--bg-page);
-        }
-
-        /* Conversión de la tabla a formato tarjeta en pantallas móviles */
-        @media (max-width: 600px) {
-            .soportes-table, .soportes-table tbody, .soportes-table tr, .soportes-table td {
-                display: block;
-                width: 100%;
-            }
-            .soportes-table thead {
-                display: none; /* Ocultamos la cabecera de la tabla en móviles */
-            }
-            .soportes-table tr {
-                margin-bottom: 1.5rem;
-                border: 2px solid var(--border-color);
-                border-radius: var(--radius-md);
-                overflow: hidden;
-                box-shadow: var(--shadow-subtle);
-            }
-            .soportes-table td {
-                text-align: right;
-                padding-left: 50%;
-                position: relative;
-                border: none;
-                border-bottom: 1px solid var(--border-color);
-            }
-            .soportes-table td:last-child {
-                border-bottom: none;
-            }
-            /* Generamos etiquetas a la izquierda para el contenido de cada celda */
-            .soportes-table td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 1.2rem;
-                width: 45%;
-                font-weight: 800;
-                text-align: left;
-                color: var(--primary);
-            }
         }
 
         /* ==========================================================================
@@ -1201,7 +1131,7 @@
             <h2 class="sr-only">Recursos para Familias</h2>
             
             <div class="familias-grid">
-                <!-- Bloc 1: Vida Quotidiana -->
+                <!-- Bloc 1: Vida Cotidiana -->
                 <article class="card" style="margin-bottom:0;">
                     <h3 class="section-title">🏡 Vida Cotidiana</h3>
                     
@@ -1222,62 +1152,58 @@
                     </ul>
                 </article>
 
-                <!-- Bloc 2: Entorn Laboral -->
+                <!-- Bloc 2: Checklist de Apoyos Estratégicos -->
                 <article class="card" style="margin-bottom:0;">
-                    <h3 class="section-title">💼 Entorno Laboral</h3>
+                    <h3 class="section-title">📊 Bloque 2: Apoyos Estratégicos</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">El apoyo no es invasivo; debe ajustarse y reducirse gradualmente a medida que el joven gana seguridad. Utiliza este checklist para aplicar los apoyos en casa:</p>
                     
-                    <div class="sub-bloc-title">Preparación como confianza</div>
-                    <ul class="familias-list" style="margin-bottom:1.5rem;">
-                        <li>
-                            <strong>Planificación por escrito anticipada</strong>
-                            Ayudarles a preparar las reuniones o dudas por escrito el día antes (estructurar puntos de vista, anotar preguntas concretas).
-                        </li>
-                    </ul>
+                    <!-- Barra de progreso para familias -->
+                    <div class="progress-section" aria-live="polite">
+                        <div class="progress-header">
+                            <span>Apoyos familiares aplicados</span>
+                            <span id="family-progress-percent">0% completado</span>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div id="family-progress-bar" class="progress-bar-inner"></div>
+                        </div>
+                        <div id="family-progress-text-summary" style="margin-top:0.75rem; font-size:0.95rem; font-weight:600; color:var(--text-muted);">
+                            Has aplicado 0 de 4 apoyos estratégicos.
+                        </div>
+                    </div>
 
-                    <div class="sub-bloc-title">Rol activo en equipo</div>
-                    <ul class="familias-list">
-                        <li>
-                            <strong>Fomentar tareas concretas y factuales</strong>
-                            Incentivar que hagan preguntas abiertas, asuman tareas muy definidas (ej: encargarse de redactar el resumen escrito de una reunión) y visibilisen su trabajo con datos.
+                    <!-- Casillas de verificación del checklist familiar -->
+                    <ul class="checklist-list" aria-label="Lista de apoyos estratégicos para familias">
+                        <li class="checklist-item">
+                            <label class="checklist-label">
+                                <input type="checkbox" class="family-checklist-checkbox" value="1">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="checklist-text"><strong>Soporte Estructural:</strong> Ofrecer órdenes del día o protocolos por escrito 24 horas antes de las actividades.</span>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <label class="checklist-label">
+                                <input type="checkbox" class="family-checklist-checkbox" value="2">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="checklist-text"><strong>Soporte Tecnológico:</strong> Usar aplicaciones de tareas, agendas compartidas o recordatorios visuales.</span>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <label class="checklist-label">
+                                <input type="checkbox" class="family-checklist-checkbox" value="3">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="checklist-text"><strong>Soporte Relacional:</strong> Asegurar un mentor, tutor o persona de referencia para revisar juntos los planes.</span>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <label class="checklist-label">
+                                <input type="checkbox" class="family-checklist-checkbox" value="4">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="checklist-text"><strong>Soporte Temporal:</strong> Acordar un plazo de 24 horas para procesar decisiones importantes, sin presiones.</span>
+                            </label>
                         </li>
                     </ul>
                 </article>
             </div>
-
-            <!-- Bloc 3: Taula de Suports Estratègics -->
-            <article class="card">
-                <h3 class="section-title">📊 Bloque 3: Tabla de Soportes Estratégicos</h3>
-                <p style="margin-bottom:1.5rem; color:var(--text-muted);">El apoyo a la autodeterminación no es invasivo; debe ajustarse y reducirse gradualmente a medida que el joven gana seguridad:</p>
-                
-                <div class="table-responsive-container">
-                    <table class="soportes-table">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="width: 25%;">Tipo de Soporte</th>
-                                <th scope="col">Descripción y Estrategias Concretas</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Tipo de Soporte"><strong>Soporte Estructural</strong></td>
-                                <td data-label="Descripción">Dar los órdenes del día o protocolos de funcionamiento por escrito 24 horas antes de las actividades.</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Tipo de Soporte"><strong>Soporte Tecnológico</strong></td>
-                                <td data-label="Descripción">Uso planificado de aplicaciones de gestión de tareas, agendas digitales compartidas o recordatorios visuales personalizados.</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Tipo de Soporte"><strong>Soporte Relacional</strong></td>
-                                <td data-label="Descripción">Disponer de un mentor, tutor o compañero de referencia (en el trabajo o estudio) que revise los planes de acción de manera pausada.</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Tipo de Soporte"><strong>Soporte Temporal</strong></td>
-                                <td data-label="Descripción">Acordar de común acuerdo que las decisiones importantes se procesen en un plazo de 24 horas, eliminando la presión de responder inmediatamente.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </article>
         </section>
     </main>
 
@@ -1441,6 +1367,38 @@
                 } else {
                     progressSummary.textContent = `Has completado ${checkedCount} de ${total} acciones. ¡Vas por el buen camino!`;
                     progressBar.style.backgroundColor = 'var(--primary)';
+                }
+            }
+
+            // ==========================================================================
+            // 3b. CHECKLIST INTERACTIVO PARA FAMILIAS (APOYOS ESTRATÉGICOS)
+            // ==========================================================================
+            const familyCheckboxes = document.querySelectorAll('.family-checklist-checkbox');
+            const familyProgressBar = document.getElementById('family-progress-bar');
+            const familyProgressPercent = document.getElementById('family-progress-percent');
+            const familyProgressSummary = document.getElementById('family-progress-text-summary');
+
+            familyCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateFamilyProgress);
+            });
+
+            function updateFamilyProgress() {
+                const total = familyCheckboxes.length;
+                const checkedCount = Array.from(familyCheckboxes).filter(c => c.checked).length;
+                const percentage = Math.round((checkedCount / total) * 100);
+
+                familyProgressBar.style.width = `${percentage}%`;
+                familyProgressPercent.textContent = `${percentage}% completado`;
+                
+                if (checkedCount === 0) {
+                    familyProgressSummary.textContent = "Has aplicado 0 de 4 apoyos estratégicos. ¡Empieza cuando quieras!";
+                    familyProgressBar.style.backgroundColor = 'var(--primary)';
+                } else if (checkedCount === total) {
+                    familyProgressSummary.innerHTML = "✨ <strong>¡Excelente! Has implementado todos los apoyos recomendados.</strong>";
+                    familyProgressBar.style.backgroundColor = 'var(--success)';
+                } else {
+                    familyProgressSummary.textContent = `Has aplicado ${checkedCount} de ${total} apoyos estratégicos. ¡Buen trabajo!`;
+                    familyProgressBar.style.backgroundColor = 'var(--primary)';
                 }
             }
 
