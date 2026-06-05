@@ -464,6 +464,19 @@
             position: relative;
         }
 
+        .luz-emoji {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .luz-amarilla .luz-emoji {
+            /* Ajuste óptico de alineación para centrar el emoji de advertencia triangular */
+            transform: translate(-2px, -5px);
+        }
+
         /* Estados apagado/encendido de cada color */
         .luz-roja {
             --light-off: #59251d;
@@ -1266,15 +1279,15 @@
                         <div class="semaforo-box" role="group" aria-label="Colores del semáforo para la autorregulación">
                             <button id="semaforo-rojo" class="semaforo-luz luz-roja" aria-label="Luz Roja" aria-pressed="false">
                                 <span class="sr-only">Luz Roja: Paro</span>
-                                🛑
+                                <span class="luz-emoji">🛑</span>
                             </button>
                             <button id="semaforo-amarillo" class="semaforo-luz luz-amarilla" aria-label="Luz Amarilla" aria-pressed="false">
                                 <span class="sr-only">Luz Amarilla: Pienso</span>
-                                ⚠️
+                                <span class="luz-emoji">⚠️</span>
                             </button>
                             <button id="semaforo-verde" class="semaforo-luz luz-verde" aria-label="Luz Verde" aria-pressed="false">
                                 <span class="sr-only">Luz Verde: Actúo</span>
-                                ✅
+                                <span class="luz-emoji">✅</span>
                             </button>
                         </div>
                         
