@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autodeterminación | Ser protagonista de tu propia vida</title>
-    <meta name="description" content="Herramientas prácticas para jóvenes con Autismo y sus familias para fomentar la autodeterminación en la transición a la vida adulta.">
+    <title>Autodeterminación y Agencia Causal | Ser protagonista de tu propia vida</title>
+    <meta name="description" content="Herramientas prácticas para jóvenes con Autismo y sus familias basadas en la Teoría de la Agencia Causal de Shogren para la transición a la vida adulta.">
     
     <!-- Google Fonts: Nunito para una mejor accesibilidad cognitiva y legibilidad -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,7 +183,7 @@
         }
 
         /* ==========================================================================
-           5. MENÚ DE PESTAÑAS (TABS NAVEGACIÓN)
+           5. MENÚ DE PESTAÑAS (TABS NAVEGACIÓ)
            ========================================================================== */
         .tabs-nav-container {
             margin-top: 2rem;
@@ -293,7 +293,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 3rem;
-            align-items: center;
+            align-items: flex-start;
         }
 
         @media (max-width: 768px) {
@@ -307,6 +307,23 @@
             font-size: 1.15rem;
             margin-bottom: 1.5rem;
             color: var(--text-main);
+        }
+
+        .theory-badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .theory-badge {
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid rgba(74, 107, 130, 0.2);
         }
 
         .intro-highlight {
@@ -328,6 +345,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 100%;
         }
 
         .btn-cta {
@@ -343,6 +361,7 @@
             box-shadow: 0 4px 15px rgba(74, 107, 130, 0.3);
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.75rem;
             transition: var(--transition-smooth);
             text-decoration: none;
@@ -731,6 +750,208 @@
         }
 
         /* ==========================================================================
+           8b. FORMULARIOS INTERACTIVOS ("PONLO EN PRÁCTICA")
+           ========================================================================== */
+        .interactive-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            background-color: rgba(74, 107, 130, 0.05);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .form-select, .form-input, .form-textarea {
+            font-family: inherit;
+            font-size: 1rem;
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--border-color);
+            background-color: #ffffff;
+            color: var(--text-main);
+            transition: var(--transition-fast);
+            width: 100%;
+        }
+
+        .form-select:focus, .form-input:focus, .form-textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 107, 130, 0.2);
+        }
+
+        /* Contenedor de checkboxes del formulario interactivo */
+        .form-checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .form-checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .form-checkbox-label:hover {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        .form-checkbox-input {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+        }
+
+        /* Plan Generado Visualmente (Estilo Diploma / Tarjeta Premium) */
+        .generated-plan-card {
+            margin-top: 2.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #fffcf9 100%);
+            border: 4px double var(--accent);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            position: relative;
+            display: none;
+            animation: textPop 0.4s ease-out forwards;
+        }
+
+        .generated-plan-card.active {
+            display: block;
+        }
+
+        .generated-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .generated-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .generated-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .generated-body {
+            text-align: left;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .generated-row {
+            background-color: rgba(253, 246, 238, 0.5);
+            padding: 1.2rem;
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--border-color);
+        }
+
+        .generated-label {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .generated-value {
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .generated-steps-list {
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .generated-steps-list li {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .plan-actions-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn-plan-action {
+            background-color: var(--accent);
+            color: #ffffff;
+            border: none;
+            padding: 0.9rem 1.8rem;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 800;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 10px rgba(176, 142, 114, 0.2);
+        }
+
+        .btn-plan-action:hover, .btn-plan-action:focus {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-plan-secondary {
+            background-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(74, 107, 130, 0.2);
+        }
+
+        .btn-plan-secondary:hover, .btn-plan-secondary:focus {
+            background-color: var(--primary-hover);
+        }
+
+        /* ==========================================================================
            9. PESTAÑA 3: PARA FAMILIAS (TARJETAS DE VIDA COTIDIANA Y CHECKLIST DE APOYOS)
            ========================================================================== */
         .familias-grid {
@@ -909,6 +1130,54 @@
             clip: rect(0, 0, 0, 0);
             border: 0;
         }
+
+        /* ==========================================================================
+           12. ESTILOS DE IMPRESIÓN (Optimizados para imprimir los planes generados)
+           ========================================================================== */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+            /* Ocultar toda la web excepto la tarjeta del plan que queremos imprimir */
+            body > *:not(.modal-overlay) {
+                display: none !important;
+            }
+            main.container {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .tab-panel {
+                display: none !important;
+            }
+            .tab-panel.active {
+                display: block !important;
+            }
+            /* Mostrar solo el plan activo y ajustar a tamaño A4 */
+            .card:not(.generated-plan-card) {
+                display: none !important;
+            }
+            .generated-plan-card {
+                display: block !important;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border: 2px solid #000000 !important;
+                box-shadow: none !important;
+                background: #ffffff !important;
+                padding: 1.5cm !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+            }
+            .plan-actions-container {
+                display: none !important;
+            }
+            .generated-row {
+                background: none !important;
+                border: 1px dashed #000000 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -924,7 +1193,7 @@
     <header>
         <span class="brand-pill" aria-hidden="true">Autodeterminación</span>
         <h1>Ser protagonista de tu propia vida</h1>
-        <p class="lead">Herramientas prácticas para jóvenes con Autismo y sus familias para fomentar la autodeterminación en la transición a la vida adulta.</p>
+        <p class="lead">Herramientas prácticas para jóvenes con Autismo y sus familias basadas en la Teoría de la Agencia Causal.</p>
         
         <!-- NAVEGACIÓN POR PESTAÑAS (ARIA-COMPLIANT) -->
         <div class="tabs-nav-container">
@@ -952,26 +1221,33 @@
     <main class="container">
 
         <!-- ==========================================================================
-             PANEL 1: INICIO
+             PANEL 1: INICIO (Centrado en la Teoría de la Agencia Causal de Shogren)
              ========================================================================== -->
         <section id="panel-inicio" class="tab-panel active" role="tabpanel" aria-labelledby="tab-inicio" tabindex="0">
             <h2 class="sr-only">Sección de Inicio</h2>
             <div class="card">
                 <div class="intro-grid">
                     <div class="intro-text">
-                        <h3 class="section-title">¿Qué significa ser el protagonista?</h3>
-                        <p>La <strong>autodeterminación</strong> es el derecho y la habilidad que te permiten tomar el control de tu propia vida. Significa ser la persona que toma las decisiones importantes, pero también las pequeñas elecciones del día a día.</p>
-                        <p>No significa hacerlo todo solo sin ayuda. Al contrario: la autodeterminación consiste en conocerte a ti mismo, saber qué quieres y aprender a pedir los apoyos necesarios para que se cumplan tus objetivos de vida.</p>
+                        <h3 class="section-title">El Camino de la Agencia Causal</h3>
+                        <p>Esta web está fundamentada en la **Teoría de la Agencia Causal** de la investigadora **Karrie A. Shogren**. Según este modelo científico, la autodeterminación es la habilidad que te permite actuar como el <strong>"agente causal"</strong> de tu propia vida: es decir, ser la persona que hace que las cosas pasen en lugar de dejar que simplemente sucedan por factores externos o decisiones ajenas.</p>
                         
+                        <p>El desarrollo de la agencia causal no ocurre en solitario. Se construye mediante la interacción entre tus metas y los apoyos estratégicos (andamiaje) que tu entorno te proporciona, dividiéndose en tres grandes pilares:</p>
+
+                        <div class="theory-badge-container" aria-label="Tres pilares del modelo de Shogren">
+                            <span class="theory-badge">1. Acción Volitiva (Autonomía)</span>
+                            <span class="theory-badge">2. Acción Agente (Dirección a metas)</span>
+                            <span class="theory-badge">3. Creencias de Capacidad Causal (Empoderamiento)</span>
+                        </div>
+
                         <div class="intro-highlight">
-                            Elección, expresión, propuesta y acción en los momentos grandes y pequeños de cada día, en lugar de dejar que las cosas simplemente pasen.
+                            Ser autodeterminado no significa hacerlo todo de forma solitaria, sino ser el autor intelectual de tus elecciones y aprender a pedir los apoyos adecuados.
                         </div>
                     </div>
                     
                     <!-- LLAMADA A LA ACCIÓN (CTA) -->
                     <div class="cta-container" aria-label="Descargar recurso">
                         <h4 style="font-size: 1.25rem; font-weight:800; margin-bottom:1rem; color:var(--text-main);">¿Quieres profundizar?</h4>
-                        <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.5rem;">Hemos preparado una guía visual interactiva de trabajo para usar en casa o en el aula.</p>
+                        <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.5rem;">Descarga nuestra guía teórica y de trabajo práctico para el aula y el hogar.</p>
                         <button id="btn-download" class="btn-cta">
                             <span>📥</span> Descargar Cuaderno completo (PDF)
                         </button>
@@ -984,22 +1260,22 @@
         </section>
 
         <!-- ==========================================================================
-             PANEL 2: PARA JÓVENES
+             PANEL 2: PARA JÓVENES (Encuadrado en Acción Agente y Capacidades)
              ========================================================================== -->
         <section id="panel-jovenes" class="tab-panel" role="tabpanel" aria-labelledby="tab-jovenes" tabindex="0">
             <h2 class="sr-only">Herramientas para Jóvenes</h2>
             <div class="jovenes-modules-grid">
                 
-                <!-- Módulo 1: Em conec i Trio -->
+                <!-- Módulo 1: Acción Volitiva -->
                 <article class="card module-conocimiento">
-                    <h3 class="section-title">🌟 Módulo 1: Me conozco y Elijo</h3>
-                    <p>Sé qué habilidades tengo y en qué necesito apoyo. Elijo la mejor opción pensando en el posible resultado.</p>
+                    <h3 class="section-title">🌟 Módulo 1: Me conozco y Elijo (Acción Volitiva)</h3>
+                    <p>Sé qué habilidades tengo, reconozco en qué tareas necesito apoyos y elijo el camino que se alinea con mis verdaderos gustos e intereses personales, pensando siempre en las consecuencias de mis actos.</p>
                 </article>
 
-                <!-- Módulo 2: El Semáforo de la Autorregulación -->
+                <!-- Módulo 2: El Semáforo de la Autorregulación (Acción Agente) -->
                 <article class="card">
                     <h3 class="section-title">🚦 Módulo 2: El Semáforo de la Autorregulación</h3>
-                    <p style="margin-bottom: 2rem; color: var(--text-muted);">Cuando sientas una emoción intensa o te notes nervioso/a, puedes utilizar esta herramienta visual. Haz clic sobre cada una de las luces para ver qué hacer:</p>
+                    <p style="margin-bottom: 2rem; color: var(--text-muted);">Para actuar como agente de tu vida, necesitas regular tu estado emocional en momentos intensos. Utiliza este semáforo visual para parar, analizar y decidir de forma tranquila:</p>
                     
                     <div class="semaforo-container">
                         <!-- Semáforo físico dibujado -->
@@ -1025,10 +1301,10 @@
                     </div>
                 </article>
 
-                <!-- Módulo 3: El Ciclo de la Acción -->
+                <!-- Módulo 3: El Ciclo de la Acción (Acción Agente) -->
                 <article class="card">
                     <h3 class="section-title">🔄 Módulo 3: El Ciclo de la Acción</h3>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Cada decisión o acción que tomas sigue naturalmente este camino secuencial. Sigue el camino para obtener el mejor resultado:</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Tomar las riendas de tu vida requiere planificar y evaluar tus pasos. Este ciclo es una guía secuencial para resolver cualquier reto o tomar una decisión:</p>
                     
                     <div class="ciclo-container" aria-label="Flujo del ciclo de la acción en seis pasos">
                         <div class="ciclo-item">
@@ -1063,10 +1339,10 @@
                     </div>
                 </article>
 
-                <!-- Módulo 4: El meu Checklist -->
+                <!-- Módulo 4: Mi Checklist (Creencias de Capacidad Causal) -->
                 <article class="card">
-                    <h3 class="section-title">📝 Módulo 4: Mi Checklist de Autodeterminación</h3>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">¡Practica tu autodeterminación marcando los pasos que consigues completar. ¡Puedes comprobar cómo avanza tu barra de progreso!</p>
+                    <h3 class="section-title">📝 Módulo 4: Mi Checklist de Capacidad Causal</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Las creencias de capacidad consisten en saber que eres capaz de lograr tus metas. Practica y evalúa tu autoconfianza marcando tus logros:</p>
                     
                     <!-- Barra de progreso -->
                     <div class="progress-section" aria-live="polite">
@@ -1121,41 +1397,145 @@
                         </li>
                     </ul>
                 </article>
+
+                <!-- NUEVO Módulo 5: ¡Ponlo en práctica! (Taller de Causalidad) -->
+                <article class="card">
+                    <h3 class="section-title">🛠️ ¡Ponlo en práctica!: Crea tu Plan de Agencia Causal</h3>
+                    <p style="color: var(--text-muted);">¡Es hora de actuar! Con este taller interactivo, planificarás una meta del cuaderno para convertirte en el agente causal de tus decisiones cotidianas. Rellena los pasos y genera tu ficha visual:</p>
+                    
+                    <form id="form-plan-joven" class="interactive-form" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="joven-nombre" class="form-label">Tu nombre:</label>
+                            <input type="text" id="joven-nombre" class="form-input" placeholder="Escribe tu nombre aquí" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="joven-meta" class="form-label">1. Elige tu Meta (Acción Volitiva):</label>
+                            <select id="joven-meta" class="form-select">
+                                <option value="Aprender a preparar mi desayuno o merienda por mí mismo">☕ Preparar mi propio desayuno o merienda</option>
+                                <option value="Viajar de forma autónoma en autobús o metro a mi lugar de estudio o actividad">🚌 Viajar solo en transporte público</option>
+                                <option value="Elegir y preparar mi ropa de forma autónoma para toda la semana">👕 Elegir y organizar mi propia ropa</option>
+                                <option value="Organizar mis tareas de estudio o de trabajo usando una agenda">📅 Organizar mis tareas usando agendas o aplicaciones</option>
+                                <option value="custom">✍️ Escribir otra meta personalizada...</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo extra para meta personalizada (oculto por defecto) -->
+                        <div id="group-meta-custom" class="form-group" style="display:none;">
+                            <label for="joven-meta-custom" class="form-label">Escribe tu propia meta:</label>
+                            <input type="text" id="joven-meta-custom" class="form-input" placeholder="Ejemplo: Ir al supermercado solo">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">2. Tu Plan de Pasos (Acción Agente):</label>
+                            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.25rem;">Escribe 3 cosas sencillas que harás de forma ordenada:</p>
+                            <input type="text" id="joven-paso1" class="form-input" style="margin-bottom:0.5rem;" placeholder="Paso 1: ¿Qué haré primero?" required>
+                            <input type="text" id="joven-paso2" class="form-input" style="margin-bottom:0.5rem;" placeholder="Paso 2: ¿Qué haré después?" required>
+                            <input type="text" id="joven-paso3" class="form-input" placeholder="Paso 3: ¿Cómo terminaré?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">3. Apoyos que pedirás (Creencias de Capacidad):</label>
+                            <p style="font-size:0.9rem; color:var(--text-muted);">Selecciona qué soportes necesitas pedirle a tu familia o escuela:</p>
+                            <div class="form-checkbox-group">
+                                <label class="form-checkbox-label">
+                                    <input type="checkbox" class="form-checkbox-input" value="Estructural" name="joven-apoyos">
+                                    <span><strong>Apoyo Estructural:</strong> Tener las instrucciones por escrito o un recordatorio visual en mi habitación.</span>
+                                </label>
+                                <label class="form-checkbox-label">
+                                    <input type="checkbox" class="form-checkbox-input" value="Tecnológico" name="joven-apoyos">
+                                    <span><strong>Apoyo Tecnológico:</strong> Usar alarmas, calendarios compartidos o una aplicación en mi móvil.</span>
+                                </label>
+                                <label class="form-checkbox-label">
+                                    <input type="checkbox" class="form-checkbox-input" value="Relacional" name="joven-apoyos">
+                                    <span><strong>Apoyo Relacional:</strong> Contar con mi familia o un mentor para revisar las dudas que me aparezcan.</span>
+                                </label>
+                                <label class="form-checkbox-label">
+                                    <input type="checkbox" class="form-checkbox-input" value="Temporal" name="joven-apoyos">
+                                    <span><strong>Apoyo Temporal:</strong> Que me den más tiempo o plazo para asimilar la decisión sin presiones.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="button" id="btn-generar-joven" class="btn-cta" style="margin-top:1rem;">
+                            ✨ Generar mi Ficha de Agente Causal
+                        </button>
+                    </form>
+
+                    <!-- Tarjeta del Plan Generada -->
+                    <div id="plan-joven-generado" class="generated-plan-card" aria-live="polite">
+                        <span class="generated-badge">Agente Causal de mi Vida</span>
+                        <h4 id="gen-joven-titulo" class="generated-title">Plan Personal de Autodeterminación</h4>
+                        <div id="gen-joven-sub" class="generated-subtitle">"Yo provoco que las cosas sucedan en mi camino"</div>
+                        
+                        <div class="generated-body">
+                            <div class="generated-row">
+                                <span class="generated-label">Nombre del Agente</span>
+                                <div id="gen-joven-nombre-val" class="generated-value">Pau</div>
+                            </div>
+                            <div class="generated-row">
+                                <span class="generated-label">Meta Elegida (Acción Volitiva)</span>
+                                <div id="gen-joven-meta-val" class="generated-value">Aprender a preparar mi merienda</div>
+                            </div>
+                            <div class="generated-row">
+                                <span class="generated-label">Pasos del Plan (Acción Agente)</span>
+                                <ol id="gen-joven-pasos-val" class="generated-steps-list">
+                                    <li>Primero, lavarme las manos.</li>
+                                    <li>Después, preparar los ingredientes del sándwich.</li>
+                                    <li>Por último, dejar la mesa limpia.</li>
+                                </ol>
+                            </div>
+                            <div class="generated-row">
+                                <span class="generated-label">Apoyos Seleccionados (Andamiaje)</span>
+                                <div id="gen-joven-apoyos-val" class="generated-value">Apoyo Estructural, Apoyo Tecnológico</div>
+                            </div>
+                        </div>
+
+                        <div class="plan-actions-container">
+                            <button id="btn-imprimir-joven" class="btn-plan-action">
+                                🖨️ Imprimir Ficha en Papel
+                            </button>
+                            <button id="btn-reiniciar-joven" class="btn-plan-action btn-plan-secondary">
+                                🔄 Crear Otro Plan
+                            </button>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
         <!-- ==========================================================================
-             PANEL 3: PARA FAMILIAS
+             PANEL 3: PARA FAMILIAS (Estrategias de Scaffolding y Taller Sincronizado)
              ========================================================================== -->
         <section id="panel-familias" class="tab-panel" role="tabpanel" aria-labelledby="tab-familias" tabindex="0">
             <h2 class="sr-only">Recursos para Familias</h2>
             
             <div class="familias-grid">
-                <!-- Bloc 1: Vida Cotidiana -->
+                <!-- Bloc 1: Vida Cotidiana (Acción Volitiva) -->
                 <article class="card" style="margin-bottom:0;">
-                    <h3 class="section-title">🏡 Vida Cotidiana</h3>
+                    <h3 class="section-title">🏡 Fomentar la Acción Volitiva</h3>
                     
                     <div class="sub-bloc-title">Organizar el entorno personal</div>
                     <ul class="familias-list" style="margin-bottom:1.5rem;">
                         <li>
                             <strong>Estructuras y rutinas tranquilas</strong>
-                            Crear pequeñas estructuras y rutinas en casa que liberen energía para las decisiones importantes (ej: preparar la ropa la noche antes, listas de la compra compartidas).
+                            Crear pequeñas estructuras estables y predecibles en casa que reduzcan la carga cognitiva, liberando energía y atención para que puedan centrarse en las decisiones voluntarias importantes (ej: preparar la ropa la noche anterior, listas de compras compartidas).
                         </li>
                     </ul>
 
-                    <div class="sub-bloc-title">Dar espacios de iniciativa</div>
+                    <div class="sub-bloc-title">Dar espacios reales de iniciativa</div>
                     <ul class="familias-list">
                         <li>
-                            <strong>Incentivar la participación directa</strong>
-                            Fomentar que propongan planes o pidan de forma explícita lo que necesitan (como establecer turnos definidos para hablar si hay una sobrecarga conversacional en la mesa).
+                            <strong>Incentivar la participación directa y explícita</strong>
+                            Fomentar que tomen la iniciativa, propongan planes familiares y expresen sus necesidades cotidianas de forma clara (como organizar turnos preestablecidos de conversación en la mesa para evitar la sobrecarga y dar espacio a que participen activamente).
                         </li>
                     </ul>
                 </article>
 
-                <!-- Bloc 2: Checklist de Apoyos Estratégicos -->
+                <!-- Bloc 2: Checklist Familiar (Apoyos y Capacidad) -->
                 <article class="card" style="margin-bottom:0;">
-                    <h3 class="section-title">📊 Bloque 2: Apoyos Estratégicos</h3>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">El apoyo no es invasivo; debe ajustarse y reducirse gradualmente a medida que el joven gana seguridad. Utiliza este checklist para aplicar los apoyos en casa:</p>
+                    <h3 class="section-title">📊 Checklist de Apoyos Estratégicos</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">El objetivo del apoyo según Shogren es actuar como andamiaje (*scaffolding*): debe ajustarse y retirarse gradualmente a medida que el joven gana seguridad. Evalúa tus apoyos activos:</p>
                     
                     <!-- Barra de progreso para familias -->
                     <div class="progress-section" aria-live="polite">
@@ -1164,7 +1544,7 @@
                             <span id="family-progress-percent">0% completado</span>
                         </div>
                         <div class="progress-bar-outer">
-                            <div id="family-progress-bar" class="progress-bar-inner"></div>
+                            <div id="family-progress-bar" class="family-progress-bar-inner"></div>
                         </div>
                         <div id="family-progress-text-summary" style="margin-top:0.75rem; font-size:0.95rem; font-weight:600; color:var(--text-muted);">
                             Has aplicado 0 de 4 apoyos estratégicos.
@@ -1177,41 +1557,119 @@
                             <label class="checklist-label">
                                 <input type="checkbox" class="family-checklist-checkbox" value="1">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text"><strong>Soporte Estructural:</strong> Ofrecer órdenes del día o protocolos por escrito 24 horas antes de las actividades.</span>
+                                <span class="checklist-text"><strong>Soporte Estructural:</strong> Ofrecer el orden del día o protocolos sencillos por escrito 24 horas antes de las actividades para reducir la incertidumbre cognitiva.</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="family-checklist-checkbox" value="2">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text"><strong>Soporte Tecnológico:</strong> Usar aplicaciones de tareas, agendas compartidas o recordatorios visuales.</span>
+                                <span class="checklist-text"><strong>Soporte Tecnológico:</strong> Facilitar y planificar el uso de herramientas de tareas, agendas compartidas o recordatorios visuales en el móvil.</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="family-checklist-checkbox" value="3">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text"><strong>Soporte Relacional:</strong> Asegurar un mentor, tutor o persona de referencia para revisar juntos los planes.</span>
+                                <span class="checklist-text"><strong>Soporte Relacional:</strong> Asegurar una persona de referencia clara (mentor, tutor, compañero) para revisar juntos los planes y resolver incidencias de forma calmada.</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="family-checklist-checkbox" value="4">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text"><strong>Soporte Temporal:</strong> Acordar un plazo de 24 horas para procesar decisiones importantes, sin presiones.</span>
+                                <span class="checklist-text"><strong>Soporte Temporal:</strong> Acordar explícitamente que las decisiones importantes se procesan en un margen de 24 horas, eliminando la exigencia de responder de inmediato.</span>
                             </label>
                         </li>
                     </ul>
                 </article>
             </div>
+
+            <!-- NUEVO Módulo 3: ¡Taller Familiar de Apoyos en la Práctica! -->
+            <article class="card">
+                <h3 class="section-title">🤝 Taller Familiar: Crea tu Plan de Apoyo al Protagonismo</h3>
+                <p style="color:var(--text-muted); margin-bottom:1.5rem;">Sincronízate con la meta elegida por el joven. Diseña tu andamiaje de apoyos y, lo más importante en la teoría de Shogren, planifica su **retirada gradual** para fomentar la autonomía real:</p>
+                
+                <form id="form-plan-familia" class="interactive-form" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label for="familia-meta-joven" class="form-label">1. ¿Qué meta va a trabajar el joven? (Escríbela de mutuo acuerdo):</label>
+                        <input type="text" id="familia-meta-joven" class="form-input" placeholder="Ejemplo: Preparar su merienda solo o viajar en bus" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">2. Define tu Plan de Apoyo Estratégico (Andamiaje):</label>
+                        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.25rem;">Escribe una acción concreta que realizarás como familia para apoyarle:</p>
+                        
+                        <div style="margin-bottom:0.75rem;">
+                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Soporte Estructural (Instrucciones, Entorno):</span>
+                            <input type="text" id="familia-apoyo-estructural" class="form-input" placeholder="Ej: Dejaremos la receta ilustrada colgada en la cocina">
+                        </div>
+                        <div style="margin-bottom:0.75rem;">
+                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Soporte Tecnológico (Agendas, Apps):</span>
+                            <input type="text" id="familia-apoyo-tecnologico" class="form-input" placeholder="Ej: Añadiremos una alarma en su móvil a las 17:00">
+                        </div>
+                        <div style="margin-bottom:0.75rem;">
+                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Soporte Relacional (Mentoría, Guía):</span>
+                            <input type="text" id="familia-apoyo-relacional" class="form-input" placeholder="Ej: Nos quedaremos cerca por si surgen dudas con el cuchillo">
+                        </div>
+                        <div style="margin-bottom:0.75rem;">
+                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Soporte Temporal (Tiempo de procesamiento):</span>
+                            <input type="text" id="familia-apoyo-temporal" class="form-input" placeholder="Ej: No meteremos prisa, dejaremos que trabaje a su propio ritmo">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familia-retirada" class="form-label">3. Plan de Retirada Progresiva (Fomento del Locus de Control):</label>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">¿Cómo irás reduciendo este soporte a medida que el joven gane seguridad?</p>
+                        <textarea id="familia-retirada" class="form-textarea" rows="3" placeholder="Ejemplo: Las primeras dos semanas supervisaremos de cerca. En la tercera semana, esperaremos en el salón y solo intervendremos si nos llama. En la cuarta semana, lo hará de forma 100% independiente." required></textarea>
+                    </div>
+
+                    <button type="button" id="btn-generar-familia" class="btn-cta" style="margin-top:1rem;">
+                        ✨ Generar Ficha de Apoyo Familiar
+                    </button>
+                </form>
+
+                <!-- Tarjeta del Plan Familiar Generado -->
+                <div id="plan-familia-generado" class="generated-plan-card" aria-live="polite">
+                    <span class="generated-badge" style="background-color: var(--primary);">Andamiaje para la Autodeterminación</span>
+                    <h4 id="gen-familia-titulo" class="generated-title">Plan de Acompañamiento a la Agencia Causal</h4>
+                    <div id="gen-familia-sub" class="generated-subtitle">"Fomentando la autonomía a través de la confianza y el apoyo estratégico"</div>
+                    
+                    <div class="generated-body">
+                        <div class="generated-row">
+                            <span class="generated-label">Meta del Joven que se Apoya</span>
+                            <div id="gen-familia-meta-val" class="generated-value">Preparar la merienda solo</div>
+                        </div>
+                        <div class="generated-row">
+                            <span class="generated-label">Estrategias de Apoyo Planificadas</span>
+                            <ul id="gen-familia-apoyos-val" class="generated-steps-list">
+                                <!-- Se rellena dinámicamente con JS -->
+                            </ul>
+                        </div>
+                        <div class="generated-row">
+                            <span class="generated-label">Plan de Retirada Progresiva del Apoyo</span>
+                            <div id="gen-familia-retirada-val" class="generated-value">Supervisar las primeras semanas y después dejar que lo haga solo.</div>
+                        </div>
+                    </div>
+
+                    <div class="plan-actions-container">
+                        <button id="btn-imprimir-familia" class="btn-plan-action">
+                            🖨️ Imprimir Ficha de Apoyo
+                        </button>
+                        <button id="btn-reiniciar-familia" class="btn-plan-action btn-plan-secondary">
+                            🔄 Crear Otro Plan
+                        </button>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
 
-    <!-- MODAL DE SIMULACIÓ DE DESCÀRREGA -->
+    <!-- MODAL DE SIMULACIÓN DE DESCÀRREGA -->
     <div id="download-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-box">
             <h3 id="modal-title" class="modal-title">Preparando descarga</h3>
-            <p id="modal-subtitle" style="color:var(--text-muted);">Generando Cuaderno de Autodeterminación en format PDF...</p>
+            <p id="modal-subtitle" style="color:var(--text-muted);">Generando Cuaderno de Autodeterminación en formato PDF...</p>
             
             <div class="modal-loader" aria-hidden="true">
                 <div id="modal-bar" class="modal-loader-bar"></div>
@@ -1235,7 +1693,7 @@
         document.addEventListener('DOMContentLoaded', () => {
 
             // ==========================================================================
-            // 1. SISTEMA DE GESTIÓN DE PESTAÑAS (ACCESIBLE)
+            // 1. SISTEMA DE GESTIÓN DE PESTAÑAS (ACCESSIBLE)
             // ==========================================================================
             const tabs = document.querySelectorAll('[role="tab"]');
             const panels = document.querySelectorAll('[role="tabpanel"]');
@@ -1404,10 +1862,144 @@
 
 
             // ==========================================================================
+            // 3c. TALLER INTERACTIVO JÓVENES: GENERAR PLAN DE ACCIÓN AGENTE
+            // ==========================================================================
+            const selectMetaJoven = document.getElementById('joven-meta');
+            const groupMetaCustom = document.getElementById('group-meta-custom');
+            const formJoven = document.getElementById('form-plan-joven');
+            const planJovenGenerado = document.getElementById('plan-joven-generado');
+            const btnGenerarJoven = document.getElementById('btn-generar-joven');
+            const btnImprimirJoven = document.getElementById('btn-imprimir-joven');
+            const btnReiniciarJoven = document.getElementById('btn-reiniciar-joven');
+
+            // Mostrar/ocultar campo de meta personalizada
+            selectMetaJoven.addEventListener('change', () => {
+                if (selectMetaJoven.value === 'custom') {
+                    groupMetaCustom.style.display = 'flex';
+                    document.getElementById('joven-meta-custom').setAttribute('required', 'required');
+                } else {
+                    groupMetaCustom.style.display = 'none';
+                    document.getElementById('joven-meta-custom').removeAttribute('required');
+                }
+            });
+
+            btnGenerarJoven.addEventListener('click', () => {
+                // Validación manual rápida de campos requeridos
+                const nombre = document.getElementById('joven-nombre').value.trim();
+                const paso1 = document.getElementById('joven-paso1').value.trim();
+                const paso2 = document.getElementById('joven-paso2').value.trim();
+                const paso3 = document.getElementById('joven-paso3').value.trim();
+                
+                let metaVal = selectMetaJoven.value;
+                if (metaVal === 'custom') {
+                    metaVal = document.getElementById('joven-meta-custom').value.trim();
+                } else {
+                    metaVal = selectMetaJoven.options[selectMetaJoven.selectedIndex].text;
+                    // Quitar los emojis del texto final del selector
+                    metaVal = metaVal.replace(/^[^\s]+\s/, '');
+                }
+
+                if (!nombre || !paso1 || !paso2 || !paso3 || (selectMetaJoven.value === 'custom' && !metaVal)) {
+                    alert("Por favor, rellena todos los campos requeridos para crear tu Plan.");
+                    return;
+                }
+
+                // Obtener apoyos seleccionados
+                const apoyosChecked = Array.from(document.querySelectorAll('input[name="joven-apoyos"]:checked'))
+                                           .map(el => el.value);
+                const apoyosTexto = apoyosChecked.length > 0 ? apoyosChecked.join(', ') : 'Ninguno seleccionado (Decisión Autónoma)';
+
+                // Rellenar la tarjeta visual
+                document.getElementById('gen-joven-nombre-val').textContent = nombre;
+                document.getElementById('gen-joven-meta-val').textContent = metaVal;
+                
+                const genPasosOl = document.getElementById('gen-joven-pasos-val');
+                genPasosOl.innerHTML = `
+                    <li>${paso1}</li>
+                    <li>${paso2}</li>
+                    <li>${paso3}</li>
+                `;
+                document.getElementById('gen-joven-apoyos-val').textContent = apoyosTexto;
+
+                // Ocultar formulario, mostrar resultado
+                formJoven.style.display = 'none';
+                planJovenGenerado.classList.add('active');
+                planJovenGenerado.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            btnReiniciarJoven.addEventListener('click', () => {
+                formJoven.reset();
+                groupMetaCustom.style.display = 'none';
+                formJoven.style.display = 'flex';
+                planJovenGenerado.classList.remove('active');
+            });
+
+            btnImprimirJoven.addEventListener('click', () => {
+                window.print();
+            });
+
+
+            // ==========================================================================
+            // 3d. TALLER INTERACTIVO FAMILIAS: GENERAR PLAN FAMILIAR DE ACOMPAÑAMIENTO
+            // ==========================================================================
+            const formFamilia = document.getElementById('form-plan-familia');
+            const planFamiliaGenerado = document.getElementById('plan-familia-generado');
+            const btnGenerarFamilia = document.getElementById('btn-generar-familia');
+            const btnImprimirFamilia = document.getElementById('btn-imprimir-familia');
+            const btnReiniciarFamilia = document.getElementById('btn-reiniciar-familia');
+
+            btnGenerarFamilia.addEventListener('click', () => {
+                const metaJoven = document.getElementById('familia-meta-joven').value.trim();
+                const apoyoEst = document.getElementById('familia-apoyo-estructural').value.trim();
+                const apoyoTec = document.getElementById('familia-apoyo-tecnologico').value.trim();
+                const apoyoRel = document.getElementById('familia-apoyo-relacional').value.trim();
+                const apoyoTem = document.getElementById('familia-apoyo-temporal').value.trim();
+                const planRetirada = document.getElementById('familia-retirada').value.trim();
+
+                if (!metaJoven || !planRetirada) {
+                    alert("Por favor, rellena al menos la meta del joven y el plan de retirada de apoyos.");
+                    return;
+                }
+
+                // Rellenar la tarjeta visual
+                document.getElementById('gen-familia-meta-val').textContent = metaJoven;
+                
+                const apoyosListUl = document.getElementById('gen-familia-apoyos-val');
+                apoyosListUl.innerHTML = '';
+                
+                if (apoyoEst) apoyosListUl.innerHTML += `<li><strong>Estructural:</strong> ${apoyoEst}</li>`;
+                if (apoyoTec) apoyosListUl.innerHTML += `<li><strong>Tecnológico:</strong> ${apoyoTec}</li>`;
+                if (apoyoRel) apoyosListUl.innerHTML += `<li><strong>Relacional:</strong> ${apoyoRel}</li>`;
+                if (apoyoTem) apoyosListUl.innerHTML += `<li><strong>Temporal:</strong> ${apoyoTem}</li>`;
+                
+                if (apoyosListUl.children.length === 0) {
+                    apoyosListUl.innerHTML = '<li><em>No se han detallado apoyos específicos para este plan.</em></li>';
+                }
+
+                document.getElementById('gen-familia-retirada-val').textContent = planRetirada;
+
+                // Ocultar formulario y mostrar resultado
+                formFamilia.style.display = 'none';
+                planFamiliaGenerado.classList.add('active');
+                planFamiliaGenerado.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            btnReiniciarFamilia.addEventListener('click', () => {
+                formFamilia.reset();
+                formFamilia.style.display = 'flex';
+                planFamiliaGenerado.classList.remove('active');
+            });
+
+            btnImprimirFamilia.addEventListener('click', () => {
+                window.print();
+            });
+
+
+            // ==========================================================================
             // 4. DESCARGA DE PDF
             // ==========================================================================
             const btnDownload = document.getElementById('btn-download');
-            const modalOverlay = document.getElementById('download-overlay') || document.getElementById('download-modal');
+            const modalOverlay = document.getElementById('download-modal');
             const modalTitle = document.getElementById('modal-title');
             const modalSubtitle = document.getElementById('modal-subtitle');
             const modalBar = document.getElementById('modal-bar');
