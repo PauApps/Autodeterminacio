@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autodeterminación y Agencia Causal | Ser protagonista de tu propia vida</title>
-    <meta name="description" content="Herramientas prácticas para jóvenes con Autismo y sus familias basadas en la Teoría de la Agencia Causal para la transición a la vida adulta.">
+    <title>Autodeterminació i Agència Causal | Ser protagonista de la teva pròpia vida</title>
+    <meta name="description" content="Eines pràctiques per a joves amb Autisme i les seves famílies basades en la Teoria de l'Agència Causal per a la transició a la vida adulta.">
     
     <!-- Google Fonts: Nunito para una mejor accesibilidad cognitiva y legibilidad -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1175,39 +1175,46 @@
                 border: 1px dashed var(--border-color) !important;
             }
         }
+
+        .btn-temps-select.active {
+            background-color: var(--primary) !important;
+            color: #ffffff !important;
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 0 3px rgba(74, 107, 130, 0.2);
+        }
     </style>
 </head>
 <body>
 
     <!-- BARRA DE ACCESIBILIDAD SUPERIOR -->
     <div class="accessibility-bar" aria-label="Opciones de accesibilidad">
-        <button id="toggle-contrast" class="btn-access" title="Cambia el contraste de la página para mejorar la lectura">
+        <button id="toggle-contrast" class="btn-access" title="Canvia el contrast de la pàgina per millorar la lectura">
             <span>👁️</span> <strong>Alto Contraste</strong>
         </button>
     </div>
 
     <!-- CABECERA -->
     <header>
-        <span class="brand-pill" aria-hidden="true">Autodeterminación</span>
-        <h1>Ser protagonista de tu propia vida</h1>
-        <p class="lead">Herramientas prácticas para jóvenes con Autismo y sus familias basadas en la Teoría de la Agencia Causal.</p>
+        <span class="brand-pill" aria-hidden="true">Autodeterminació</span>
+        <h1>Ser protagonista de la teva pròpia vida</h1>
+        <p class="lead">Eines pràctiques per a joves amb Autisme i les seves famílies basades en la Teoria de l'Agència Causal.</p>
         
         <!-- NAVEGACIÓN POR PESTAÑAS (ARIA-COMPLIANT) -->
         <div class="tabs-nav-container">
-            <ul class="tabs-list" role="tablist" aria-label="Secciones de la web">
+            <ul class="tabs-list" role="tablist" aria-label="Seccions de la web">
                 <li class="tab-item" role="presentation">
                     <button class="tab-btn" id="tab-inicio" role="tab" aria-selected="true" aria-controls="panel-inicio" tabindex="0">
-                        🏠 Inicio
+                        🏠 Inici
                     </button>
                 </li>
                 <li class="tab-item" role="presentation">
                     <button class="tab-btn" id="tab-jovenes" role="tab" aria-selected="false" aria-controls="panel-jovenes" tabindex="-1">
-                        🧑‍🎓 Para Jóvenes
+                        🧑‍🎓 Per a Joves
                     </button>
                 </li>
                 <li class="tab-item" role="presentation">
                     <button class="tab-btn" id="tab-familias" role="tab" aria-selected="false" aria-controls="panel-familias" tabindex="-1">
-                        👥 Para Familias
+                        👥 Per a Famílies
                     </button>
                 </li>
             </ul>
@@ -1221,35 +1228,35 @@
              PANEL 1: INICIO (Centrado en la Teoría de la Agencia Causal)
              ========================================================================== -->
         <section id="panel-inicio" class="tab-panel active" role="tabpanel" aria-labelledby="tab-inicio" tabindex="0">
-            <h2 class="sr-only">Sección de Inicio</h2>
+            <h2 class="sr-only">Secció d'Inici</h2>
             <div class="card">
                 <div class="intro-grid">
                     <div class="intro-text">
-                        <h3 class="section-title">El Camino de la Agencia Causal</h3>
-                        <p>Esta web está fundamentada en la **Teoría de la Agencia Causal**. Según este modelo científico, la autodeterminación es la habilidad que te permite actuar como el <strong>"agente causal"</strong> de tu propia vida: es decir, ser la persona que hace que las cosas pasen en lugar de dejar que simplemente sucedan por factores externos o decisiones ajenas.</p>
+                        <h3 class="section-title">El Camí de l'Agència Causal</h3>
+                        <p>Aquesta web està fonamentada en la **Teoria de l'Agència Causal**. Segons aquest model científic, l'autodeterminació és l'habilitat que et permet actuar com a l'<strong>"agent causal"</strong> de la teva pròpia vida: és a dir, ser la persona que hace que las cosas pasen en lloc de deixar que simplement s'esdevinguin per factors externs o decisions alienes.</p>
                         
-                        <p>El desarrollo de la agencia causal no ocurre en solitario. Se construye mediante la interacción entre tus metas y los apoyos estratégicos (andamiaje) que tu entorno te proporciona, dividiéndose en tres grandes pilares:</p>
+                        <p>El desenvolupament de l'agència causal no es produeix en solitari. Es construeix mitjançant la interacció entre les teves metes i els suports estratègics (andamiatge) que el teu entorn et proporciona, dividint-se en tres grans pilars:</p>
 
-                        <div class="theory-badge-container" aria-label="Tres pilares del modelo de la Agencia Causal">
-                            <span class="theory-badge">1. Acción Volitiva (Autonomía)</span>
-                            <span class="theory-badge">2. Acción Agente (Dirección a metas)</span>
-                            <span class="theory-badge">3. Creencias de Capacidad Causal (Empoderamiento)</span>
+                        <div class="theory-badge-container" aria-label="Tres pilars del model de l'Agència Causal">
+                            <span class="theory-badge">1. Acció Volitiva (Autonomia)</span>
+                            <span class="theory-badge">2. Acció Agent (Direcció a metes)</span>
+                            <span class="theory-badge">3. Creences de Capacitat Causal (Empoderament)</span>
                         </div>
 
                         <div class="intro-highlight">
-                            Ser autodeterminado no significa hacerlo todo de forma solitaria, sino ser el autor intelectual de tus elecciones y aprender a pedir los apoyos adecuados.
+                            Ser autodeterminat no significa fer-ho tot de forma solitària, sinó ser l'autor intel·lectual de les teves eleccions i aprendre a demanar els suports adequats.
                         </div>
                     </div>
                     
                     <!-- LLAMADA A LA ACCIÓN (CTA) -->
-                    <div class="cta-container" aria-label="Descargar recurso">
-                        <h4 style="font-size: 1.25rem; font-weight:800; margin-bottom:1rem; color:var(--text-main);">¿Quieres profundizar?</h4>
-                        <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.5rem;">Descarga nuestra guía teórica y de trabajo práctico para el aula y el hogar.</p>
+                    <div class="cta-container" aria-label="Descarregar recurs">
+                        <h4 style="font-size: 1.25rem; font-weight:800; margin-bottom:1rem; color:var(--text-main);">Vols aprofundir?</h4>
+                        <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.5rem;">Descarrega la nostra guia teòrica i de treball pràctic per a l'aula i la llar.</p>
                         <button id="btn-download" class="btn-cta">
-                            <span>📥</span> Descargar Cuaderno completo (PDF)
+                            <span>📥</span> Descarregar Quadern complet (PDF)
                         </button>
                         <span class="download-info" aria-hidden="true">
-                            <span>📄</span> PDF Interactivo • 4.2 MB
+                            <span>📄</span> PDF Interactiu • 4.2 MB
                         </span>
                     </div>
                 </div>
@@ -1260,136 +1267,136 @@
              PANEL 2: PARA JÓVENES (Encuadrado en Acción Agente y Capacidades)
              ========================================================================== -->
         <section id="panel-jovenes" class="tab-panel" role="tabpanel" aria-labelledby="tab-jovenes" tabindex="0">
-            <h2 class="sr-only">Herramientas para Jóvenes</h2>
+            <h2 class="sr-only">Eines per a Joves</h2>
             <div class="jovenes-modules-grid">
                 
                 <!-- Módulo 1: Acción Volitiva -->
                 <article class="card module-conocimiento">
-                    <h3 class="section-title">🌟 Módulo 1: Me conozco y Elijo (Acción Volitiva)</h3>
-                    <p>Sé qué habilidades tengo, reconozco en qué tareas necesito apoyos y elijo el camino que se alinea con mis verdaderos gustos e intereses personales, pensando siempre en las consecuencias de mis actos.</p>
+                    <h3 class="section-title">🌟 Mòdul 1: Em conec i Trio (Acció Volitiva)</h3>
+                    <p>Sé quines habilitats tinc, reconec en quines tasques necessito suports i trio el camí que s'alinea amb els meus veritables gustos i interessos personals, pensant sempre en les conseqüències dels meus actes.</p>
                 </article>
 
                 <!-- Módulo 2: El Semáforo de la Autorregulación (Acción Agente) -->
                 <article class="card">
-                    <h3 class="section-title">🚦 Módulo 2: El Semáforo de la Autorregulación</h3>
-                    <p style="margin-bottom: 2rem; color: var(--text-muted);">Para actuar como agente de tu vida, necesitas regular tu estado emocional en momentos intensos. Utiliza este semáforo visual para parar, analizar y decidir de forma tranquila:</p>
+                    <h3 class="section-title">🚦 Mòdul 2: El Semàfor de l'Autoregulació</h3>
+                    <p style="margin-bottom: 2rem; color: var(--text-muted);">Per actuar com a agent de la teva vida, necessites regular el teu estat emocional en moments intensos. Utilitza aquest semàfor visual per aturar-te, analitzar i decidir de forma tranquil·la:</p>
                     
                     <div class="semaforo-container">
                         <!-- Semáforo físico dibujado -->
-                        <div class="semaforo-box" role="group" aria-label="Colores del semáforo para la autorregulación">
+                        <div class="semaforo-box" role="group" aria-label="Colors del semàfor per a l'autoregulació">
                             <button id="semaforo-rojo" class="semaforo-luz luz-roja" aria-label="Luz Roja" aria-pressed="false">
-                                <span class="sr-only">Luz Roja: Paro</span>
+                                <span class="sr-only">Llum Vermella: Atura't</span>
                                 <span class="luz-emoji">🛑</span>
                             </button>
                             <button id="semaforo-amarillo" class="semaforo-luz luz-amarilla" aria-label="Luz Amarilla" aria-pressed="false">
-                                <span class="sr-only">Luz Amarilla: Pienso</span>
+                                <span class="sr-only">Llum Groga: Pensa</span>
                                 <span class="luz-emoji">⚠️</span>
                             </button>
                             <button id="semaforo-verde" class="semaforo-luz luz-verde" aria-label="Luz Verde" aria-pressed="false">
-                                <span class="sr-only">Luz Verde: Actúo</span>
+                                <span class="sr-only">Llum Verda: Actua</span>
                                 <span class="luz-emoji">✅</span>
                             </button>
                         </div>
                         
                         <!-- Caja de mensaje asociada -->
                         <div id="semaforo-feedback" class="semaforo-feedback-box">
-                            <p class="semaforo-hint">Haz clic en una de las luces del semáforo para empezar.</p>
+                            <p class="semaforo-hint">Fes clic en una de les llums del semàfor per començar.</p>
                         </div>
                     </div>
                 </article>
 
                 <!-- Módulo 3: El Ciclo de la Acción (Acción Agente) -->
                 <article class="card">
-                    <h3 class="section-title">🔄 Módulo 3: El Ciclo de la Acción</h3>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Tomar las riendas de tu vida requiere planificar y evaluar tus pasos. Este ciclo es una guía secuencial para resolver cualquier reto o tomar una decisión:</p>
+                    <h3 class="section-title">🔄 Mòdul 3: El Cicle de l'Acció</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Prendre les regnes de la teva vida requereix planificar i avaluar els teus passos. Aquest cicle és una guia seqüencial per resoldre qualsevol repte o prendre una decisió:</p>
                     
-                    <div class="ciclo-container" aria-label="Flujo del ciclo de la acción en seis pasos">
+                    <div class="ciclo-container" aria-label="Flux del cicle de l'acció en sis passos">
                         <div class="ciclo-item">
                             <span class="ciclo-num">1</span>
-                            <div class="ciclo-name">Paro</div>
+                            <div class="ciclo-name">Atura't</div>
                         </div>
                         <div class="ciclo-arrow" aria-hidden="true">➔</div>
                         <div class="ciclo-item">
                             <span class="ciclo-num">2</span>
-                            <div class="ciclo-name">Pienso</div>
+                            <div class="ciclo-name">Pensa</div>
                         </div>
                         <div class="ciclo-arrow" aria-hidden="true">➔</div>
                         <div class="ciclo-item">
                             <span class="ciclo-num">3</span>
-                            <div class="ciclo-name">Elijo</div>
+                            <div class="ciclo-name">Tria</div>
                         </div>
                         <div class="ciclo-arrow" aria-hidden="true">➔</div>
                         <div class="ciclo-item">
                             <span class="ciclo-num">4</span>
-                            <div class="ciclo-name">Actúo</div>
+                            <div class="ciclo-name">Actua</div>
                         </div>
                         <div class="ciclo-arrow" aria-hidden="true">➔</div>
                         <div class="ciclo-item">
                             <span class="ciclo-num">5</span>
-                            <div class="ciclo-name">Reviso</div>
+                            <div class="ciclo-name">Revisa</div>
                         </div>
                         <div class="ciclo-arrow" aria-hidden="true">➔</div>
                         <div class="ciclo-item">
                             <span class="ciclo-num">6</span>
-                            <div class="ciclo-name">Aprender</div>
+                            <div class="ciclo-name">Aprèn</div>
                         </div>
                     </div>
                 </article>
 
                 <!-- Módulo 4: Mi Checklist (Creencias de Capacidad Causal) -->
                 <article class="card">
-                    <h3 class="section-title">📝 Módulo 4: Mi Checklist de Capacidad Causal</h3>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Las creencias de capacidad consisten en saber que eres capaz de lograr tus metas. Practica y evalúa tu autoconfianza marcando tus logros:</p>
+                    <h3 class="section-title">📝 Mòdul 4: El meu Checklist de Capacitat Causal</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Les creences de capacitat consisteixen a saber que ets capaç d'assolir les teves metes. Practica i avalua la teva autoconfiança marcant els teus assoliments:</p>
                     
                     <!-- Barra de progreso -->
                     <div class="progress-section" aria-live="polite">
                         <div class="progress-header">
-                            <span>Tu progreso de autodeterminación</span>
-                            <span id="progress-percent">0% completado</span>
+                            <span>El teu progrés d'autodeterminació</span>
+                            <span id="progress-percent">0% completat</span>
                         </div>
                         <div class="progress-bar-outer">
                             <div id="progress-bar" class="progress-bar-inner"></div>
                         </div>
                         <div id="progress-text-summary" style="margin-top:0.75rem; font-size:0.95rem; font-weight:600; color:var(--text-muted);">
-                            Has completado 0 de 5 acciones.
+                            Has completat 0 de 5 accions.
                         </div>
                     </div>
 
                     <!-- Casillas de verificación -->
-                    <ul class="checklist-list" aria-label="Lista de comprobación de autodeterminación">
+                    <ul class="checklist-list" aria-label="Llista de comprovació d'autodeterminació">
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="checklist-checkbox" value="1">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text">Sé qué quiero o qué necesito.</span>
+                                <span class="checklist-text">Sé què vull o què necessito.</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="checklist-checkbox" value="2">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text">Pienso en mis opciones (tengo más de una).</span>
+                                <span class="checklist-text">Pensa en mis opciones (tengo más de una).</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="checklist-checkbox" value="3">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text">Elijo la mejor opción para mí (aunque no sea perfecta).</span>
+                                <span class="checklist-text">Tria la mejor opción para mí (aunque no sea perfecta).</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="checklist-checkbox" value="4">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text">Hago un plan paso a paso y empiezo a pesar de tener nervios.</span>
+                                <span class="checklist-text">Faig un pla pas a pas i començo tot i tenir nervis.</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="checklist-checkbox" value="5">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text">Pido ayuda si aparece un problema (no tengo que hacerlo solo/a).</span>
+                                <span class="checklist-text">Demano ajuda si apareix un problema (no ho he de fer sol/a).</span>
                             </label>
                         </li>
                     </ul>
@@ -1397,107 +1404,256 @@
 
                 <!-- Módulo 5: ¡Ponlo en práctica! (Taller de Causalidad para perfiles independientes) -->
                 <article class="card">
-                    <h3 class="section-title">🛠️ ¡Ponlo en práctica!: Crea tu Plan de Agencia Causal</h3>
-                    <p style="color: var(--text-muted);">¡Es hora de actuar! Con este taller interactivo, planificarás una meta de transición adulta para convertirte en el agente causal de tus decisiones de futuro. Rellena los pasos y genera tu ficha visual:</p>
+                    <h3 class="section-title">🛠️ Mòdul 5: Posa'ho en pràctica! Crea el teu Pla d'Agència Causal</h3>
+                    <p style="color: var(--text-muted);">És hora d'actuar! Amb aquest taller interactiu, planificaràs una meta de transició adulta per convertir-te en l'agent causal de les teves decisions de futur. Omple els passos i genera la teva fitxa visual:</p>
                     
                     <form id="form-plan-joven" class="interactive-form" onsubmit="event.preventDefault();">
                         <div class="form-group">
-                            <label for="joven-nombre" class="form-label">Tu nombre:</label>
-                            <input type="text" id="joven-nombre" class="form-input" placeholder="Escribe tu nombre aquí" required>
+                            <label for="joven-nombre" class="form-label">El teu nom:</label>
+                            <input type="text" id="joven-nombre" class="form-input" placeholder="Escriu el teu nom aquí" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="joven-meta" class="form-label">1. Elige tu Meta (Acción Volitiva):</label>
+                            <label for="joven-meta" class="form-label">1. Tria la teva Meta (Acció Volitiva):</label>
                             <select id="joven-meta" class="form-select">
-                                <option value="Planificar mi transición a estudios superiores o al ámbito laboral (universidad, formación, empleo)">🎓 Planificar mi transición a estudios superiores o ámbito laboral</option>
-                                <option value="Aprender a gestionar mis finanzas personales y presupuesto mensual de forma autónoma">💰 Gestionar mis finanzas personales y presupuesto mensual</option>
-                                <option value="Organizar mi propio horario de estudios, trabajo y tiempo libre de forma independiente">📅 Organizar mi propio horario de estudios, trabajo y ocio</option>
-                                <option value="Preparar y solicitar adaptaciones de accesibilidad en mi centro de estudios o puesto de trabajo">🗣️ Preparar y solicitar adaptaciones necesarias (Autodefensa)</option>
-                                <option value="Planificar mis opciones de vivienda independiente o compartida a medio plazo">🏠 Planificar mis opciones de vivienda independiente a futuro</option>
-                                <option value="Establecer estrategias para gestionar situaciones de sobrecarga sensorial o social en entornos públicos">🌳 Diseñar estrategias frente a sobrecargas sensoriales o sociales</option>
-                                <option value="custom">✍️ Escribir otro objetivo o meta personalizada...</option>
+                                <option value="Planificar mi transición a estudios superiores o al ámbito laboral (universidad, formación, empleo)">🎓 Planificar la meva transició a estudis superiors o a l'àmbit laboral</option>
+                                <option value="Aprèn a gestionar mis finanzas personales y presupuesto mensual de forma autónoma">💰 Gestionar les meves finances personals i el meu pressupost mensual</option>
+                                <option value="Organizar mi propio horario de estudios, trabajo y tiempo libre de forma independiente">📅 Organitzar el meu propi horari d'estudis, treball i oci</option>
+                                <option value="Preparar y solicitar adaptaciones de accesibilidad en mi centro de estudios o puesto de trabajo">🗣️ Preparar i sol·licitar adaptacions necessàries (Autodefensa)</option>
+                                <option value="Planificar mis opciones de vivienda independiente o compartida a medio plazo">🏠 Planificar les meves opcions de vivenda independent a futur</option>
+                                <option value="Establecer estrategias para gestionar situaciones de sobrecarga sensorial o social en entornos públicos">🌳 Dissenyar estratègies davant de sobrecàrregues sensorials o socials</option>
+                                <option value="custom">✍️ Escriure un altre objectiu o meta personalitzada...</option>
                             </select>
                         </div>
 
                         <!-- Campo extra para meta personalizada (oculto por defecto) -->
                         <div id="group-meta-custom" class="form-group" style="display:none;">
-                            <label for="joven-meta-custom" class="form-label">Escribe tu propio objetivo:</label>
-                            <input type="text" id="joven-meta-custom" class="form-input" placeholder="Ejemplo: Organizar mi viaje de vacaciones solo">
+                            <label for="joven-meta-custom" class="form-label">Escriu el teu propi objectiu:</label>
+                            <input type="text" id="joven-meta-custom" class="form-input" placeholder="Exemple: Organitzar el meu viatge de vacances sol">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">2. Tu Plan de Resolución de Retos (Acción Agente):</label>
-                            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.25rem;">La agencia se demuestra anticipando problemas y estructurando pasos concretos:</p>
-                            <input type="text" id="joven-paso1" class="form-input" style="margin-bottom:0.5rem;" placeholder="¿Qué obstáculo o barrera podrías encontrarte al intentar esta meta?" required>
-                            <input type="text" id="joven-paso2" class="form-input" style="margin-bottom:0.5rem;" placeholder="¿Qué estrategia o solución aplicarás frente a ese obstáculo?" required>
-                            <input type="text" id="joven-paso3" class="form-input" placeholder="¿Cuál será tu primer paso práctico para empezar el plan?" required>
+                            <label class="form-label">2. El teu Pla de Resolució de Reptes (Acció Agent):</label>
+                            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.25rem;">L'agència es demostra anticipant problemes i estructurant passos concrets:</p>
+                            <input type="text" id="joven-paso1" class="form-input" style="margin-bottom:0.5rem;" placeholder="Quin obstacle o barrera et podries trobar en intentar aquesta meta?" required>
+                            <input type="text" id="joven-paso2" class="form-input" style="margin-bottom:0.5rem;" placeholder="Quina estratègia o solució aplicaràs davant d'aquest obstacle?" required>
+                            <input type="text" id="joven-paso3" class="form-input" placeholder="Quin serà el teu primer pas pràctic per començar el pla?" required>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">3. Apoyos que pedirás (Creencias de Capacidad):</label>
-                            <p style="font-size:0.9rem; color:var(--text-muted);">Selecciona qué soportes necesitas pedirle a tu entorno, o elige si prefieres actuar de forma autónoma:</p>
+                            <label class="form-label">3. Suports que demanaràs (Creences de Capacitat):</label>
+                            <p style="font-size:0.9rem; color:var(--text-muted);">Selecciona quins suports necessites demanar al teu entorn, o tria si prefereixes actuar de forma autònoma:</p>
                             <div class="form-checkbox-group">
                                 <label class="form-checkbox-label">
-                                    <input type="checkbox" class="form-checkbox-input" id="joven-apoyo-ninguno" value="Ninguno" name="joven-apoyos">
-                                    <span><strong>Sin apoyos:</strong> No necesito ningún apoyo para esta meta (acción completamente autónoma).</span>
+                                    <input type="checkbox" class="form-checkbox-input" id="joven-apoyo-ninguno" value="Cap" name="joven-apoyos">
+                                    <span><strong>Sense suports:</strong> No necessito cap suport per a aquesta meta (acció completament autònoma).</span>
                                 </label>
                                 <label class="form-checkbox-label">
                                     <input type="checkbox" class="form-checkbox-input" value="Estructural" name="joven-apoyos">
-                                    <span><strong>Apoyo Estructural:</strong> Disponer de guías estructuradas, plantillas organizativas o recordatorios por escrito.</span>
+                                    <span><strong>Suport Estructural:</strong> Disposar de guies estructurades, plantilles organitzatives o recordatoris per escrit.</span>
                                 </label>
                                 <label class="form-checkbox-label">
-                                    <input type="checkbox" class="form-checkbox-input" value="Tecnológico" name="joven-apoyos">
-                                    <span><strong>Apoyo Tecnológico:</strong> Usar aplicaciones de planificación, calendarios digitales o alarmas.</span>
+                                    <input type="checkbox" class="form-checkbox-input" value="Tecnològic" name="joven-apoyos">
+                                    <span><strong>Suport Tecnològic:</strong> Fer servir aplicacions de planificació, calendaris digitals o alarmes.</span>
                                 </label>
                                 <label class="form-checkbox-label">
                                     <input type="checkbox" class="form-checkbox-input" value="Relacional" name="joven-apoyos">
-                                    <span><strong>Apoyo Relacional:</strong> Contar con mi familia o un mentor externo para revisar las dudas o realizar seguimiento.</span>
+                                    <span><strong>Suport Relacional:</strong> Comptar amb la meva família o un mentor extern per revisar els dubtes o fer el seguiment.</span>
                                 </label>
                                 <label class="form-checkbox-label">
                                     <input type="checkbox" class="form-checkbox-input" value="Temporal" name="joven-apoyos">
-                                    <span><strong>Apoyo Temporal:</strong> Que me respeten plazos más amplios para tomar decisiones reflexivas, sin presiones.</span>
+                                    <span><strong>Suport Temporal:</strong> Que em respectin terminis més amplis per prendre decisions reflexives, sense pressions.</span>
                                 </label>
                             </div>
                         </div>
 
                         <button type="button" id="btn-generar-joven" class="btn-cta" style="margin-top:1rem;">
-                            ✨ Generar mi Ficha de Agente Causal
+                            ✨ Generar la meva Fitxa d'Agent Causal
                         </button>
                     </form>
 
                     <!-- Tarjeta del Plan Generada -->
                     <div id="plan-joven-generado" class="generated-plan-card" aria-live="polite">
-                        <span class="generated-badge">Agente Causal de mi Vida</span>
-                        <h4 id="gen-joven-titulo" class="generated-title">Plan Personal de Autodeterminación</h4>
-                        <div id="gen-joven-sub" class="generated-subtitle">"Yo provoco que las cosas sucedan en mi camino"</div>
+                        <span class="generated-badge">Agent Causal de la meva Vida</span>
+                        <h4 id="gen-joven-titulo" class="generated-title">Pla Personal d'Autodeterminació</h4>
+                        <div id="gen-joven-sub" class="generated-subtitle">"Jo provoco que les coses s'esdevinguin en el meu camí"</div>
                         
                         <div class="generated-body">
                             <div class="generated-row">
-                                <span class="generated-label">Nombre del Agente</span>
+                                <span class="generated-label">Nom de l'Agent</span>
                                 <div id="gen-joven-nombre-val" class="generated-value">Nombre</div>
                             </div>
                             <div class="generated-row">
-                                <span class="generated-label">Meta Elegida (Acción Volitiva)</span>
+                                <span class="generated-label">Meta Triada (Acció Volitiva)</span>
                                 <div id="gen-joven-meta-val" class="generated-value">Meta</div>
                             </div>
                             <div class="generated-row">
-                                <span class="generated-label">Planificación frente a Retos (Acción Agente)</span>
+                                <span class="generated-label">Planificació davant de Reptes (Acció Agent)</span>
                                 <ul id="gen-joven-pasos-val" class="generated-steps-list">
                                     <!-- Rellenado por JS -->
                                 </ul>
                             </div>
                             <div class="generated-row">
-                                <span class="generated-label">Apoyos Seleccionados (Andamiaje)</span>
-                                <div id="gen-joven-apoyos-val" class="generated-value">Apoyos</div>
+                                <span class="generated-label">Suports Seleccionats (Andamiatge)</span>
+                                <div id="gen-joven-apoyos-val" class="generated-value">Suports</div>
                             </div>
                         </div>
 
                         <div class="plan-actions-container">
                             <button id="btn-imprimir-joven" class="btn-plan-action">
-                                🖨️ Imprimir Ficha en Papel
+                                🖨️ Imprimir Fitxa en Paper
                             </button>
                             <button id="btn-reiniciar-joven" class="btn-plan-action btn-plan-secondary">
-                                🔄 Crear Otro Plan
+                                🔄 Crear un altre Pla
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mòdul 6: Fitxes d'Autoreflexió (Autoconeixement) -->
+                <article class="card">
+                    <h3 class="section-title">📝 Mòdul 6: Fitxes d'Autoreflexió (Autoconeixement)</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">L'autoconeixement és clau per a l'autodeterminació. Reflexiona sobre les teves habilitats i les àrees on et va bé rebre suport, i genera la teva fitxa personal:</p>
+                    
+                    <form id="form-autoreflexio" class="interactive-form" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="reflexio-forts" class="form-label">1. Què se'm dóna bé? (Els meus punts forts, talents o interessos especials):</label>
+                            <textarea id="reflexio-forts" class="form-textarea" rows="3" placeholder="Ex: Sóc molt bo en la memòria visual, m'encanta el disseny, dibuixar o programar, sóc molt ordenat amb les meves coses..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reflexio-suports" class="form-label">2. En què necessito suport? (Tasques o situacions que em resulten difícils o estressants):</label>
+                            <textarea id="reflexio-suports" class="form-textarea" rows="3" placeholder="Ex: Em costa començar converses amb desconeguts, em saturo si hi ha molt de soroll, em costa organitzar tasques quan són molt llargues..." required></textarea>
+                        </div>
+
+                        <button type="button" id="btn-generar-reflexio" class="btn-cta" style="margin-top:1rem;">
+                            ✨ Generar la meva Fitxa d'Autoconeixement
+                        </button>
+                    </form>
+
+                    <!-- Targeta de Reflexió Generada -->
+                    <div id="plan-reflexio-generat" class="generated-plan-card" aria-live="polite">
+                        <span class="generated-badge">Autoconeixement i Punts Forts</span>
+                        <h4 id="gen-reflexio-titol" class="generated-title">Fitxa Personal d'Autoconeixement</h4>
+                        <div id="gen-reflexio-sub" class="generated-subtitle">"Conèixer les meves capacitats em fa l'amo de les meves decisions"</div>
+                        
+                        <div class="generated-body">
+                            <div class="generated-row" style="background-color: #f4faf6; border-color: #4a7c59;">
+                                <span class="generated-label" style="color: #4a7c59;">🌟 Els meus punts forts (Què se'm dóna bé)</span>
+                                <div id="gen-reflexio-forts-val" class="generated-value" style="white-space: pre-line;">Punts forts</div>
+                            </div>
+                            <div class="generated-row" style="background-color: #fef4f2; border-color: #e76f51;">
+                                <span class="generated-label" style="color: #e76f51;">🛡️ Àrees de suport (En què necessito ajuda)</span>
+                                <div id="gen-reflexio-suports-val" class="generated-value" style="white-space: pre-line;">Àrees de suport</div>
+                            </div>
+                        </div>
+
+                        <div class="plan-actions-container">
+                            <button id="btn-imprimir-reflexio" class="btn-plan-action">
+                                🖨️ Imprimir Fitxa en Paper
+                            </button>
+                            <button id="btn-reiniciar-reflexio" class="btn-plan-action btn-plan-secondary">
+                                🔄 Fer una altra Reflexió
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mòdul 7: Gestió del Temps i Tecnologies (Control de Reforçadors) -->
+                <article class="card">
+                    <h3 class="section-title">⏱️ Mòdul 7: Gestió del Temps (Control de Reforçadors)</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Per autoregular el nostre temps, és molt útil pactar com i quan farem servir les pantalles, els videojocs o altres activitats molt repetitives que ens encanten (reforçadors). Defineix el teu pacte de temps:</p>
+                    
+                    <form id="form-reforcadors" class="interactive-form" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="reforcador-nom" class="form-label">1. Quina tecnologia o activitat vols utilitzar? (El teu reforçador):</label>
+                            <select id="reforcador-nom" class="form-select">
+                                <option value="Videojocs / Consola">🎮 Videojocs / Consola</option>
+                                <option value="Mòbil / Xarxes Socials / Vídeos (YouTube, TikTok)">📱 Mòbil, xarxes socials o vídeos</option>
+                                <option value="Ordinador / Navegar per Internet">💻 Ordinador o internet</option>
+                                <option value="Lectura o investigació de temes d'interès especial">📚 Investigació o lectura de temes d'interès especial</option>
+                                <option value="custom">✍️ Escriure una altra activitat...</option>
+                            </select>
+                        </div>
+
+                        <div id="group-reforcador-custom" class="form-group" style="display:none;">
+                            <label for="reforcador-custom" class="form-label">Escriu l'activitat o reforçador:</label>
+                            <input type="text" id="reforcador-custom" class="form-input" placeholder="Ex: Jugar amb trens elèctrics">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">2. Quant de temps el faràs servir? (Estableix un límit):</label>
+                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.25rem;">
+                                <button type="button" class="btn-access btn-temps-select" data-time="30 minuts">30 minuts</button>
+                                <button type="button" class="btn-access btn-temps-select" data-time="45 minuts">45 minuts</button>
+                                <button type="button" class="btn-access btn-temps-select" data-time="1 hora">1 hora</button>
+                                <button type="button" class="btn-access btn-temps-select" data-time="1 hora i 30 minuts">1h 30m</button>
+                                <input type="hidden" id="reforcador-temps" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reforcador-previa" class="form-label">3. Quina tasca o responsabilitat faràs ABANS d'usar-lo? (Tasca prèvia):</label>
+                            <select id="reforcador-previa" class="form-select">
+                                <option value="Haver fet els deures o tasques d'estudi del dia">✏️ Haver fet els deures o tasques d'estudi del dia</option>
+                                <option value="Haver endreçat la meva habitació o recollit la taula">🧹 Haver endreçat la meva habitació o recollit la taula</option>
+                                <option value="Haver-me dutxat i preparat la roba de l'endemà">🚿 Haver-me dutxat i preparat la roba de l'endemà</option>
+                                <option value="Haver dinat o sopat primer de forma tranquil·la">🍽️ Haver dinat o sopat primer de forma tranquil·la</option>
+                                <option value="custom">✍️ Escriure una altra tasca...</option>
+                            </select>
+                        </div>
+
+                        <div id="group-previa-custom" class="form-group" style="display:none;">
+                            <label for="reforcador-previa-custom" class="form-label">Escriu la tasca prèvia:</label>
+                            <input type="text" id="reforcador-previa-custom" class="form-input" placeholder="Ex: Haver passejat el gos">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reforcador-bloqueig" class="form-label">4. Com desconnectaràs quan s'acabi el temps? (Estratègia de bloqueig):</label>
+                            <select id="reforcador-bloqueig" class="form-select">
+                                <option value="Posar una alarma sonora ben forta i apagar el dispositiu de seguida">⏰ Posar una alarma sonora ben forta i apagar el dispositiu de seguida</option>
+                                <option value="Entregar el comandament, el mòbil o el cable a la meva família">🔑 Entregar el comandament, el mòbil o el cable a la meva família</option>
+                                <option value="Activar una aplicació de bloqueig de pantalla automàtic al dispositiu">🔒 Activar una aplicació de bloqueig de pantalla automàtic al dispositiu</option>
+                                <option value="Demanar a un familiar que em doni un avís verbal 5 minuts abans d'acabar">🗣️ Demanar a un familiar que em doni un avís verbal 5 minuts abans d'acabar</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="btn-generar-reforcadors" class="btn-cta" style="margin-top:1rem;">
+                            ✨ Generar el meu Pacte d'Autoregulació
+                        </button>
+                    </form>
+
+                    <!-- Pacte Generat -->
+                    <div id="plan-reforcadors-generat" class="generated-plan-card" aria-live="polite">
+                        <span class="generated-badge" style="background-color: var(--primary);">Pacte d'Autoregulació de Temps</span>
+                        <h4 id="gen-reforcadors-titol" class="generated-title">El meu Pacte del Temps</h4>
+                        <div id="gen-reforcadors-sub" class="generated-subtitle">"Jo controlo el meu temps, les pantalles no em controlen a mi"</div>
+                        
+                        <div class="generated-body">
+                            <div class="generated-row">
+                                <span class="generated-label">1. L'activitat o reforçador triat</span>
+                                <div id="gen-reforcadors-nom-val" class="generated-value">Reforçador</div>
+                            </div>
+                            <div class="generated-row">
+                                <span class="generated-label">2. Temps límit d'ús</span>
+                                <div id="gen-reforcadors-temps-val" class="generated-value" style="color: var(--accent); font-size: 1.3rem;">Temps</div>
+                            </div>
+                            <div class="generated-row">
+                                <span class="generated-label">3. Compromís (Què faré ABANS)</span>
+                                <div id="gen-reforcadors-previa-val" class="generated-value">Tasca prèvia</div>
+                            </div>
+                            <div class="generated-row">
+                                <span class="generated-label">4. Desconnexió (Com aturaré l'activitat)</span>
+                                <div id="gen-reforcadors-bloqueig-val" class="generated-value">Estratègia de desconnexió</div>
+                            </div>
+                        </div>
+
+                        <div class="plan-actions-container">
+                            <button id="btn-imprimir-reforcadors" class="btn-plan-action">
+                                🖨️ Imprimir Pacte en Paper
+                            </button>
+                            <button id="btn-reiniciar-reforcadors" class="btn-plan-action btn-plan-secondary">
+                                🔄 Pactar de Nou
                             </button>
                         </div>
                     </div>
@@ -1506,159 +1662,159 @@
         </section>
 
         <!-- ==========================================================================
-             PANEL 3: PARA FAMILIAS (Estrategias de Scaffolding y Taller Sincronizado)
+             PANEL 3: PER A FAMÍLIES (Estratègies d'Andamiatge i Taller Sincronitzat)
              ========================================================================== -->
         <section id="panel-familias" class="tab-panel" role="tabpanel" aria-labelledby="tab-familias" tabindex="0">
-            <h2 class="sr-only">Recursos para Familias</h2>
+            <h2 class="sr-only">Recursos per a Famílies</h2>
             
             <div class="familias-grid">
                 <!-- Bloc 1: Autonomía cotidiana -->
                 <article class="card" style="margin-bottom:0;">
-                    <h3 class="section-title">🏡 Autonomía e iniciativa cotidiana</h3>
+                    <h3 class="section-title">🏡 Autonomia i iniciativa quotidiana</h3>
                     
-                    <div class="sub-bloc-title">Organizar el entorno personal</div>
+                    <div class="sub-bloc-title">Organitzar l'entorn personal</div>
                     <ul class="familias-list" style="margin-bottom:1.5rem;">
                         <li>
-                            <strong>Estructuras y rutinas tranquilas</strong>
-                            Crear pequeñas estructuras estables y predecibles en casa que reduzcan la carga cognitiva, liberando energía y atención para que puedan centrarse en las decisiones voluntarias importantes (ej: preparar la ropa la noche anterior, listas de compras compartidas).
+                            <strong>Estructures i rutines tranquil·les</strong>
+                            Crear petites estructures estables i predictibles a casa que redueixin la càrrega cognitiva, alliberant energia i atenció perquè es puguin centrar en les decisions voluntàries importants (ex: preparar la roba la nit abans, llistes de la compra compartides).
                         </li>
                     </ul>
 
-                    <div class="sub-bloc-title">Dar espacios reales de iniciativa</div>
+                    <div class="sub-bloc-title">Donar espais reals d'iniciativa</div>
                     <ul class="familias-list">
                         <li>
-                            <strong>Incentivar la participación directa y explícita</strong>
-                            Fomentar que tomen la iniciativa, propongan planes familiares y expresen sus necesidades cotidianas de forma clara (como organizar turnos preestablecidos de conversación en la mesa para evitar la sobrecarga y dar espacio a que participen activamente).
+                            <strong>Incentivar la participació directa i explícita</strong>
+                            Fomentar que prenguin la iniciativa, proposin plans familiars i expressin les seves necessitats quotidianes de forma clara (com organitzar torns preestablerts de conversa a la taula per evitar la sobrecàrrega i donar espai a participar activament).
                         </li>
                     </ul>
                 </article>
 
-                <!-- Bloc 2: Checklist Familiar (Apoyos y Capacidad) -->
+                <!-- Bloc 2: Checklist Familiar (Suports i Capacitat) -->
                 <article class="card" style="margin-bottom:0;">
-                    <h3 class="section-title">📊 Checklist de Apoyos Estratégicos</h3>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">El objetivo del apoyo es actuar como andamiaje (*scaffolding*): debe ajustarse y retirarse gradualmente a medida que el joven gana seguridad. Evalúa tus apoyos activos:</p>
+                    <h3 class="section-title">📊 Checklist de Suports Estratègics</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">L'objectiu del suport és actuar com a andamiatge (*scaffolding*): s'ha d'ajustar i retirar gradualment a mesura que el jove guanya seguretat. Avalua els teus suports actius:</p>
                     
                     <!-- Barra de progreso para familias -->
                     <div class="progress-section" aria-live="polite">
                         <div class="progress-header">
-                            <span>Apoyos familiares aplicados</span>
-                            <span id="family-progress-percent">0% completado</span>
+                            <span>Suports familiars aplicats</span>
+                            <span id="family-progress-percent">0% completat</span>
                         </div>
                         <div class="progress-bar-outer">
                             <div id="family-progress-bar" class="family-progress-bar-inner"></div>
                         </div>
                         <div id="family-progress-text-summary" style="margin-top:0.75rem; font-size:0.95rem; font-weight:600; color:var(--text-muted);">
-                            Has aplicado 0 de 4 apoyos estratégicos.
+                            Has aplicat 0 de 4 suports estratègics.
                         </div>
                     </div>
 
                     <!-- Casillas de verificación del checklist familiar -->
-                    <ul class="checklist-list" aria-label="Lista de apoyos estratégicos para familias">
+                    <ul class="checklist-list" aria-label="Llista de suports estratègics per a famílies">
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="family-checklist-checkbox" value="1">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text"><strong>Soporte Estructural:</strong> Ofrecer el orden del día o protocolos sencillos por escrito 24 horas antes de las actividades para reducir la incertidumbre cognitiva.</span>
+                                <span class="checklist-text"><strong>Suport Estructural:</strong> Oferir l'ordre del dia o protocols senzills per escrit 24 hores abans d'<strong>activitats extraordinàries</strong> (excursions, visites al metge, canvis de rutina) per reduir la incertesa cognitiva.</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="family-checklist-checkbox" value="2">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text"><strong>Soporte Tecnológico:</strong> Facilitar y planificar el uso de herramientas de tareas, agendas compartidas o recordatorios visuales en el móvil.</span>
+                                <span class="checklist-text"><strong>Suport Tecnològic:</strong> Facilitar i planificar l'ús d'eines de tasques, agendes compartides o recordatoris visuals al mòbil.</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="family-checklist-checkbox" value="3">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text"><strong>Soporte Relacional:</strong> Asegurar una persona de referencia clara (mentor, tutor, compañero) para revisar juntos los planes y resolver incidencias de forma calmada.</span>
+                                <span class="checklist-text"><strong>Suport Relacional:</strong> Assegurar una persona de referència clara (mentor, tutor, company) per revisar junts els plans i resoldre incidències de forma calmada.</span>
                             </label>
                         </li>
                         <li class="checklist-item">
                             <label class="checklist-label">
                                 <input type="checkbox" class="family-checklist-checkbox" value="4">
                                 <span class="custom-checkbox" aria-hidden="true"></span>
-                                <span class="checklist-text"><strong>Soporte Temporal:</strong> Acordar explícitamente que las decisiones importantes se procesen en un margen de 24 horas, eliminando la exigencia de responder de inmediato.</span>
+                                <span class="checklist-text"><strong>Suport Temporal:</strong> Acordar explícitament que les decisions importants es processin en un marge de 24 hores, eliminant l'exigència de respondre immediatament.</span>
                             </label>
                         </li>
                     </ul>
                 </article>
             </div>
 
-            <!-- Módulo 3: ¡Taller Familiar de Apoyos en la Práctica! -->
+            <!-- Mòdul 3: Taller Familiar de Suports en la Pràctica! -->
             <article class="card">
-                <h3 class="section-title">🤝 Taller Familiar: Crea tu Plan de Apoyo al Protagonismo</h3>
-                <p style="color:var(--text-muted); margin-bottom:1.5rem;">Sincronízate con la meta elegida por el joven. Diseña tu andamiaje de apoyos y, lo más importante en la teoría de la agencia causal, planifica su **retirada gradual** para fomentar la autonomía real:</p>
+                <h3 class="section-title">🤝 Taller Familiar: Crea el teu Pla de Suport al Protagonisme</h3>
+                <p style="color:var(--text-muted); margin-bottom:1.5rem;">Sincronitza't amb la meta triada pel jove. Dissenya el teu andamiatge de suports i, el més important en la teoria de l'agència causal, planifica la seva **retirada gradual** per fomentar l'autonomia real:</p>
                 
                 <form id="form-plan-familia" class="interactive-form" onsubmit="event.preventDefault();">
                     <div class="form-group">
-                        <label for="familia-meta-joven" class="form-label">1. ¿Qué meta va a trabajar el joven? (Escríbela de mutuo acuerdo):</label>
-                        <input type="text" id="familia-meta-joven" class="form-input" placeholder="Ejemplo: Organizar su horario de estudios de forma independiente" required>
+                        <label for="familia-meta-joven" class="form-label">1. Quina meta treballarà el jove? (Escriu-la de mutu acord):</label>
+                        <input type="text" id="familia-meta-joven" class="form-input" placeholder="Exemple: Organitzar el seu horari d'estudis de forma independent" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">2. Define tu Plan de Apoyo Estratégico (Andamiaje):</label>
-                        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.25rem;">Escribe una acción concreta que realizarás como familia para apoyarle (deja en blanco si no es necesario):</p>
+                        <label class="form-label">2. Defineix el teu Pla de Suport Estratègic (Andamiatge):</label>
+                        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.25rem;">Escriu una acció concreta que realitzaràs com a família per recolzar-lo (deixa en blanc si no és necessari):</p>
                         
                         <div style="margin-bottom:0.75rem;">
-                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Soporte Estructural (Instrucciones, Entorno):</span>
-                            <input type="text" id="familia-apoyo-estructural" class="form-input" placeholder="Ej: Facilitaremos plantillas de planificación semanal por escrito">
+                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Suport Estructural (Instruccions, Entorn):</span>
+                            <input type="text" id="familia-apoyo-estructural" class="form-input" placeholder="Ex: Avisarem amb 24h d'antelació d'activitats extraordinàries fora de la rutina i les detallarem per escrit.">
                         </div>
                         <div style="margin-bottom:0.75rem;">
-                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Soporte Tecnológico (Agendas, Apps):</span>
-                            <input type="text" id="familia-apoyo-tecnologico" class="form-input" placeholder="Ej: Crearemos un calendario digital compartido de estudio">
+                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Suport Tecnològic (Agendes, Apps):</span>
+                            <input type="text" id="familia-apoyo-tecnologico" class="form-input" placeholder="Ex: Crearem un calendari digital compartit d'estudis">
                         </div>
                         <div style="margin-bottom:0.75rem;">
-                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Soporte Relacional (Mentoría, Guía):</span>
-                            <input type="text" id="familia-apoyo-relacional" class="form-input" placeholder="Ej: Haremos una breve sesión semanal de revisión de avances de 10 min">
+                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Suport Relacional (Mentoria, Guia):</span>
+                            <input type="text" id="familia-apoyo-relacional" class="form-input" placeholder="Ex: Farem una breu sessió setmanal de revisió d'avenços de 10 minuts">
                         </div>
                         <div style="margin-bottom:0.75rem;">
-                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Soporte Temporal (Tiempo de procesamiento):</span>
-                            <input type="text" id="familia-apoyo-temporal" class="form-input" placeholder="Ej: Daremos margen de 24h para que decida sus asignaturas optativas">
+                            <span style="font-weight:700; font-size:0.95rem; color:var(--primary);">Suport Temporal (Temps de processament):</span>
+                            <input type="text" id="familia-apoyo-temporal" class="form-input" placeholder="Ex: Donarem un marge de 24h perquè decideixi les seves assignatures optatives">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="familia-retirada" class="form-label">3. Plan de Retirada Progresiva (Fomento del Locus de Control):</label>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">¿Cómo irás reduciendo este soporte a medida que el joven gane seguridad?</p>
-                        <textarea id="familia-retirada" class="form-textarea" rows="3" placeholder="Ejemplo: Las primeras dos semanas haremos la sesión de revisión juntos. A partir de la tercera semana, él preparará la agenda solo y nosotros solo revisaremos el resultado final el domingo." required></textarea>
+                        <label for="familia-retirada" class="form-label">3. Pla de Retirada Progressiva (Foment del Locus de Control):</label>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Com aniràs reduint aquest suport a mesura que el jove guanyi seguretat?</p>
+                        <textarea id="familia-retirada" class="form-textarea" rows="3" placeholder="Exemple: Les primeres dues setmanes farem la sessió de revisió junts. A partir de la tercera setmana, ell prepararà l'agenda sol i nosaltres només revisarem el resultat final el diumenge." required></textarea>
                     </div>
 
                     <button type="button" id="btn-generar-familia" class="btn-cta" style="margin-top:1rem;">
-                        ✨ Generar Ficha de Apoyo Familiar
+                        ✨ Generar Fitxa de Suport Familiar
                     </button>
                 </form>
 
                 <!-- Tarjeta del Plan Familiar Generado -->
                 <div id="plan-familia-generado" class="generated-plan-card" aria-live="polite">
-                    <span class="generated-badge" style="background-color: var(--primary);">Andamiaje para la Autodeterminación</span>
-                    <h4 id="gen-familia-titulo" class="generated-title">Plan de Acompañamiento a la Agencia Causal</h4>
-                    <div id="gen-familia-sub" class="generated-subtitle">"Fomentando la autonomía a través de la confianza y el apoyo estratégico"</div>
+                    <span class="generated-badge" style="background-color: var(--primary);">Andamiatge per a l'Autodeterminació</span>
+                    <h4 id="gen-familia-titulo" class="generated-title">Pla d'Acompanyament a l'Agència Causal</h4>
+                    <div id="gen-familia-sub" class="generated-subtitle">"Fomentant l'autonomia a través de la confiança i el suport estratègic"</div>
                     
                     <div class="generated-body">
                         <div class="generated-row">
-                            <span class="generated-label">Meta del Joven que se Apoya</span>
+                            <span class="generated-label">Meta del Jove que es Recolza</span>
                             <div id="gen-familia-meta-val" class="generated-value">Meta</div>
                         </div>
                         <div class="generated-row">
-                            <span class="generated-label">Estrategias de Apoyo Planificadas</span>
+                            <span class="generated-label">Estratègies de Suport Planificades</span>
                             <ul id="gen-familia-apoyos-val" class="generated-steps-list">
                                 <!-- Se rellena dinámicamente con JS -->
                             </ul>
                         </div>
                         <div class="generated-row">
-                            <span class="generated-label">Plan de Retirada Progresiva del Apoyo</span>
+                            <span class="generated-label">Pla de Retirada Progressiva del Suport</span>
                             <div id="gen-familia-retirada-val" class="generated-value">Retirada</div>
                         </div>
                     </div>
 
                     <div class="plan-actions-container">
                         <button id="btn-imprimir-familia" class="btn-plan-action">
-                            🖨️ Imprimir Ficha de Apoyo
+                            🖨️ Imprimir Fitxa de Suport
                         </button>
                         <button id="btn-reiniciar-familia" class="btn-plan-action btn-plan-secondary">
-                            🔄 Crear Otro Plan
+                            🔄 Crear un altre Pla
                         </button>
                     </div>
                 </div>
@@ -1669,24 +1825,24 @@
     <!-- MODAL DE SIMULACIÓN DE DESCÀRREGA -->
     <div id="download-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-box">
-            <h3 id="modal-title" class="modal-title">Preparando descarga</h3>
-            <p id="modal-subtitle" style="color:var(--text-muted);">Generando Cuaderno de Autodeterminación en formato PDF...</p>
+            <h3 id="modal-title" class="modal-title">Preparant descàrrega</h3>
+            <p id="modal-subtitle" style="color:var(--text-muted);">Generant Quadern d'Autodeterminació en format PDF...</p>
             
             <div class="modal-loader" aria-hidden="true">
                 <div id="modal-bar" class="modal-loader-bar"></div>
             </div>
             
-            <div id="modal-status" class="modal-status-text" aria-live="polite">0% completado</div>
+            <div id="modal-status" class="modal-status-text" aria-live="polite">0% completat</div>
             
-            <button id="btn-close-modal" class="btn-modal-close">Cerrar ventana</button>
+            <button id="btn-close-modal" class="btn-modal-close">Tancar finestra</button>
         </div>
     </div>
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Herramientas de Autodeterminación. Creado con criterios de accesibilidad e inclusión cognitiva.</p>
-        <p>Desarrollado para jóvenes con <span class="footer-tag">Autisme</span> y sus <span class="footer-tag">Familias</span>.</p>
-        <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.85;">Web desarrollada por <span class="footer-tag">PauApps</span></p>
+        <p>© 2026 Eines d'Autodeterminació. Creat amb criteris d'accessibilitat i inclusió cognitiva.</p>
+        <p>Desenvolupat per a joves amb <span class="footer-tag">Autisme</span> i les seves <span class="footer-tag">Famílies</span>.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.85;">Web desenvolupada per <span class="footer-tag">PauApps</span></p>
     </footer>
 
     <!-- LÒGICA JAVASCRIPT -->
@@ -1694,7 +1850,7 @@
         document.addEventListener('DOMContentLoaded', () => {
 
             // ==========================================================================
-            // 1. SISTEMA DE GESTIÓN DE PESTAÑAS (ACCESIBLE)
+            // 1. SISTEMA DE GESTIÓ DE PESTANYES (ACCESSIBLE)
             // ==========================================================================
             const tabs = document.querySelectorAll('[role="tab"]');
             const panels = document.querySelectorAll('[role="tabpanel"]');
@@ -1704,7 +1860,7 @@
                     switchTab(tab);
                 });
 
-                // Control por teclado (flecha derecha y flecha izquierda para mover el foco)
+                // Control per teclat (fitxa dreta i fitxa esquerra per moure el focus)
                 tab.addEventListener('keydown', (e) => {
                     const tabList = tab.closest('[role="tablist"]');
                     const tabItems = Array.from(tabList.querySelectorAll('[role="tab"]'));
@@ -1726,7 +1882,7 @@
             });
 
             function switchTab(selectedTab) {
-                // Desactivar todas las pestañas y paneles
+                // Desactivar totes les pestanyes i panells
                 tabs.forEach(tab => {
                     tab.setAttribute('aria-selected', 'false');
                     tab.setAttribute('tabindex', '-1');
@@ -1736,7 +1892,7 @@
                     panel.classList.remove('active');
                 });
 
-                // Activar la pestaña clicada y su panel correspondiente
+                // Activar la pestanya clicada i el seu panell corresponent
                 selectedTab.setAttribute('aria-selected', 'true');
                 selectedTab.setAttribute('tabindex', '0');
                 
@@ -1747,7 +1903,7 @@
 
 
             // ==========================================================================
-            // 2. INTERACTIVIDAD DEL SEMÁFORO DE LA AUTORREGULACIÓN (MÒDUL 2)
+            // 2. INTERACTIVITAT DEL SEMÀFOR DE L'AUTOREGULACIÓ (MÒDUL 2)
             // ==========================================================================
             const llums = {
                 rojo: document.getElementById('semaforo-rojo'),
@@ -1759,24 +1915,24 @@
             const missatgesSemafor = {
                 rojo: {
                     icon: '🛑',
-                    text: 'PARO Y RESPIRO<br><span style="font-size:1.15rem; font-weight:normal;">(Estoy nervioso/a o colapsado/a).</span>',
+                    text: 'M\'ATURO I RESPIRO<br><span style="font-size:1.15rem; font-weight:normal;">(Estic nerviós/a o col\·lapsat/da).</span>',
                     class: 'highlight-roja'
                 },
                 amarillo: {
                     icon: '⚠️',
-                    text: 'PIENSO QUÉ PASA<br><span style="font-size:1.15rem; font-weight:normal;">(Detecto qué me pone nervioso/a o qué me molesta).</span>',
+                    text: 'PENSO QUÈ PASSA<br><span style="font-size:1.15rem; font-weight:normal;">(Detecto què em posa nerviós/a o què em molesta).</span>',
                     class: 'highlight-amarilla'
                 },
                 verde: {
                     icon: '✅',
-                    text: 'ACTÚO O EXPLICO<br><span style="font-size:1.15rem; font-weight:normal;">(Pruebo una solución o lo digo con palabras y un tono de voz tranquilo).</span>',
+                    text: 'ACTUO O M\'EXPLICO<br><span style="font-size:1.15rem; font-weight:normal;">(Provo una solució o ho dic amb paraules i un to de veu tranquil).</span>',
                     class: 'highlight-verde'
                 }
             };
 
             Object.keys(llums).forEach(color => {
                 llums[color].addEventListener('click', () => {
-                    // Actualiza estados activos del semáforo físico
+                    // Actualitza els estats actius del semàfor físic
                     Object.keys(llums).forEach(c => {
                         llums[c].classList.remove('active');
                         llums[c].setAttribute('aria-pressed', 'false');
@@ -1785,7 +1941,7 @@
                     llums[color].classList.add('active');
                     llums[color].setAttribute('aria-pressed', 'true');
 
-                    // Actualiza la caja de texto con los mensajes
+                    // Actualitza la caixa de text amb els missatges
                     semaforFeedback.className = 'semaforo-feedback-box ' + missatgesSemafor[color].class;
                     semaforFeedback.innerHTML = `
                         <div class="semaforo-state-icon" aria-hidden="true">${missatgesSemafor[color].icon}</div>
@@ -1796,7 +1952,7 @@
 
 
             // ==========================================================================
-            // 3. CHECKLIST INTERACTIVO DE AUTODETERMINACIÓN (MÒDUL 4)
+            // 3. CHECKLIST INTERACTIU D'AUTODETERMINACIÓ (MÒDUL 4)
             // ==========================================================================
             const checkboxes = document.querySelectorAll('.checklist-checkbox');
             const progressBar = document.getElementById('progress-bar');
@@ -1812,25 +1968,25 @@
                 const checkedCount = Array.from(checkboxes).filter(c => c.checked).length;
                 const percentage = Math.round((checkedCount / total) * 100);
 
-                // Actualización visual de la barra de progreso
+                // Actualització visual de la barra de progrés
                 progressBar.style.width = `${percentage}%`;
-                progressPercent.textContent = `${percentage}% completado`;
+                progressPercent.textContent = `${percentage}% completat`;
                 
-                // Mensaje personalizado según el progreso
+                // Missatge personalitzat segons el progrés
                 if (checkedCount === 0) {
-                    progressSummary.textContent = "Has completado 0 de 5 acciones. ¡Empieza cuando quieras!";
+                    progressSummary.textContent = "Has completat 0 de 5 accions. ¡Empieza cuando quieras!";
                     progressBar.style.backgroundColor = 'var(--primary)';
                 } else if (checkedCount === total) {
-                    progressSummary.innerHTML = "✨ <strong>¡Muy bien! ¡Has completado todo el checklist de autodeterminación!</strong>";
+                    progressSummary.innerHTML = "✨ <strong>¡Molt bé! ¡Has completat tot el checklist d\'autodeterminació!</strong>";
                     progressBar.style.backgroundColor = 'var(--success)';
                 } else {
-                    progressSummary.textContent = `Has completado ${checkedCount} de ${total} acciones. ¡Vas por el buen camino!`;
+                    progressSummary.textContent = `Has completat ${checkedCount} de ${total} accions. Vas pel bon camí!`;
                     progressBar.style.backgroundColor = 'var(--primary)';
                 }
             }
 
             // ==========================================================================
-            // 3b. CHECKLIST INTERACTIVO PARA FAMILIAS (APOYOS ESTRATÉGICOS)
+            // 3b. CHECKLIST INTERACTIU PER A FAMÍLIES (SUPORTS ESTRATÈGICS)
             // ==========================================================================
             const familyCheckboxes = document.querySelectorAll('.family-checklist-checkbox');
             const familyProgressBar = document.getElementById('family-progress-bar');
@@ -1847,23 +2003,23 @@
                 const percentage = Math.round((checkedCount / total) * 100);
 
                 familyProgressBar.style.width = `${percentage}%`;
-                familyProgressPercent.textContent = `${percentage}% completado`;
+                familyProgressPercent.textContent = `${percentage}% completat`;
                 
                 if (checkedCount === 0) {
-                    familyProgressSummary.textContent = "Has aplicado 0 de 4 apoyos estratégicos. ¡Empieza cuando quieras!";
+                    familyProgressSummary.textContent = "Has aplicat 0 de 4 suports estratègics. ¡Empieza cuando quieras!";
                     familyProgressBar.style.backgroundColor = 'var(--primary)';
                 } else if (checkedCount === total) {
-                    familyProgressSummary.innerHTML = "✨ <strong>¡Excelente! Has implementado todos los apoyos recomendados.</strong>";
+                    familyProgressSummary.innerHTML = "✨ <strong>¡Excel·lent! Has implementat tots els suports recomanats.</strong>";
                     familyProgressBar.style.backgroundColor = 'var(--success)';
                 } else {
-                    familyProgressSummary.textContent = `Has aplicado ${checkedCount} de ${total} apoyos estratégicos. ¡Buen trabajo!`;
+                    familyProgressSummary.textContent = `Has aplicat ${checkedCount} de ${total} suports estratègics. Bona feina!`;
                     familyProgressBar.style.backgroundColor = 'var(--primary)';
                 }
             }
 
 
             // ==========================================================================
-            // 3c. TALLER INTERACTIVO JÓVENES: LÓGICA Y MUTUA EXCLUSIÓN DE APOYOS
+            // 3c. TALLER INTERACTIU JOVES: LÒGICA I MÚTUA EXCLUSIÓ DE SUPORTS
             // ==========================================================================
             const selectMetaJoven = document.getElementById('joven-meta');
             const groupMetaCustom = document.getElementById('group-meta-custom');
@@ -1874,24 +2030,24 @@
             const btnReiniciarJoven = document.getElementById('btn-reiniciar-joven');
 
             const checkboxesApoyo = document.querySelectorAll('input[name="joven-apoyos"]');
-            const checkboxNinguno = document.getElementById('joven-apoyo-ninguno');
+            const checkboxCap = document.getElementById('joven-apoyo-ninguno');
 
-            // Gestión de exclusión mutua de los apoyos ("Sin apoyos" vs otros)
+            // Gestió d'exclusió mútua dels suports ("Sense suports" vs altres)
             checkboxesApoyo.forEach(cb => {
                 cb.addEventListener('change', () => {
-                    if (cb === checkboxNinguno && checkboxNinguno.checked) {
-                        // Si se marca "Ninguno", desmarcar todos los demás
+                    if (cb === checkboxCap && checkboxCap.checked) {
+                        // Si se marca "Cap", desmarcar todos los demás
                         checkboxesApoyo.forEach(other => {
-                            if (other !== checkboxNinguno) other.checked = false;
+                            if (other !== checkboxCap) other.checked = false;
                         });
-                    } else if (cb !== checkboxNinguno && cb.checked) {
-                        // Si se marca cualquier otro, desmarcar "Ninguno"
-                        checkboxNinguno.checked = false;
+                    } else if (cb !== checkboxCap && cb.checked) {
+                        // Si se marca cualquier otro, desmarcar "Cap"
+                        checkboxCap.checked = false;
                     }
                 });
             });
 
-            // Mostrar/ocultar campo de meta personalizada
+            // Mostrar/ocultar camp de meta personalitzada
             selectMetaJoven.addEventListener('change', () => {
                 if (selectMetaJoven.value === 'custom') {
                     groupMetaCustom.style.display = 'flex';
@@ -1913,36 +2069,36 @@
                     metaVal = document.getElementById('joven-meta-custom').value.trim();
                 } else {
                     metaVal = selectMetaJoven.options[selectMetaJoven.selectedIndex].text;
-                    metaVal = metaVal.replace(/^[^\s]+\s/, ''); // quitar emojis
+                    metaVal = metaVal.replace(/^[^\s]+\s/, ''); // treure emojis
                 }
 
                 if (!nombre || !paso1 || !paso2 || !paso3 || (selectMetaJoven.value === 'custom' && !metaVal)) {
-                    alert("Por favor, rellena todos los campos requeridos para crear tu Plan.");
+                    alert("Si us plau, omple tots els camps requerits per crear el teu Pla.");
                     return;
                 }
 
-                // Obtener apoyos seleccionados
+                // Obtenir els suports seleccionats
                 const apoyosChecked = Array.from(document.querySelectorAll('input[name="joven-apoyos"]:checked'))
                                            .map(el => el.value);
                 
-                let apoyosTexto = 'Ninguno (Planificación y acción 100% autónoma)';
-                if (apoyosChecked.length > 0 && !apoyosChecked.includes('Ninguno')) {
-                    apoyosTexto = apoyosChecked.map(a => `Apoyo ${a}`).join(', ');
+                let apoyosTexto = 'Cap (Planificació i acció 100% autònoma)';
+                if (apoyosChecked.length > 0 && !apoyosChecked.includes('Cap')) {
+                    apoyosTexto = apoyosChecked.map(a => `Suport ${a}`).join(', ');
                 }
 
-                // Rellenar la tarjeta visual
+                // Omplir la targeta visual
                 document.getElementById('gen-joven-nombre-val').textContent = nombre;
                 document.getElementById('gen-joven-meta-val').textContent = metaVal;
                 
                 const genPasosOl = document.getElementById('gen-joven-pasos-val');
                 genPasosOl.innerHTML = `
-                    <li><strong>Obstáculo anticipado:</strong> ${paso1}</li>
-                    <li><strong>Estrategia de solución:</strong> ${paso2}</li>
-                    <li><strong>Primer paso práctico:</strong> ${paso3}</li>
+                    <li><strong>Obstacle anticipat:</strong> ${paso1}</li>
+                    <li><strong>Estratègia de solució:</strong> ${paso2}</li>
+                    <li><strong>Primer pas pràctic:</strong> ${paso3}</li>
                 `;
                 document.getElementById('gen-joven-apoyos-val').textContent = apoyosTexto;
 
-                // Ocultar formulario, mostrar resultado
+                // Ocultar formulari, mostrar resultat
                 formJoven.style.display = 'none';
                 planJovenGenerado.classList.add('active');
                 planJovenGenerado.scrollIntoView({ behavior: 'smooth' });
@@ -1961,7 +2117,7 @@
 
 
             // ==========================================================================
-            // 3d. TALLER INTERACTIVO FAMILIAS: GENERAR PLAN FAMILIAR DE ACOMPAÑAMIENTO
+            // 3d. TALLER INTERACTIU FAMÍLIES: GENERAR PLA FAMILIAR D'ACOMPANYAMENT
             // ==========================================================================
             const formFamilia = document.getElementById('form-plan-familia');
             const planFamiliaGenerado = document.getElementById('plan-familia-generado');
@@ -1978,23 +2134,23 @@
                 const planRetirada = document.getElementById('familia-retirada').value.trim();
 
                 if (!metaJoven || !planRetirada) {
-                    alert("Por favor, rellena al menos la meta del joven y el plan de retirada de apoyos.");
+                    alert("Si us plau, omple almenys la meta del jove i el pla de retirada de suports.");
                     return;
                 }
 
-                // Rellenar la tarjeta visual
+                // Omplir la targeta visual
                 document.getElementById('gen-familia-meta-val').textContent = metaJoven;
                 
                 const apoyosListUl = document.getElementById('gen-familia-apoyos-val');
                 apoyosListUl.innerHTML = '';
                 
                 if (apoyoEst) apoyosListUl.innerHTML += `<li><strong>Estructural:</strong> ${apoyoEst}</li>`;
-                if (apoyoTec) apoyosListUl.innerHTML += `<li><strong>Tecnológico:</strong> ${apoyoTec}</li>`;
+                if (apoyoTec) apoyosListUl.innerHTML += `<li><strong>Tecnòlogic:</strong> ${apoyoTec}</li>`;
                 if (apoyoRel) apoyosListUl.innerHTML += `<li><strong>Relacional:</strong> ${apoyoRel}</li>`;
                 if (apoyoTem) apoyosListUl.innerHTML += `<li><strong>Temporal:</strong> ${apoyoTem}</li>`;
                 
                 if (apoyosListUl.children.length === 0) {
-                    apoyosListUl.innerHTML = '<li><em>No se han detallado apoyos (Fomento de autonomía 100% independiente)</em></li>';
+                    apoyosListUl.innerHTML = '<li><em>No s\'havia detallat suports (Foment d\'autonomia 100% independent)</em></li>';
                 }
 
                 document.getElementById('gen-familia-retirada-val').textContent = planRetirada;
@@ -2017,19 +2173,19 @@
 
 
             // ==========================================================================
-            // 3e. SISTEMA DE IMPRESIÓN DINÁMICO (Crea contenedor temporal limpio en body)
+            // 3e. SISTEMA D'IMPRESSIÓ DINÀMIC (Crea contenidor temporal net al body)
             // ==========================================================================
             function printElement(elementId) {
                 const element = document.getElementById(elementId);
                 if (!element) return;
 
-                // Crear contenedor temporal
+                // Crear contenidor temporal
                 const printContainer = document.createElement('div');
                 printContainer.id = 'print-temp-container';
                 printContainer.innerHTML = element.innerHTML;
                 printContainer.className = element.className + ' print-temp-active';
                 
-                // Estilos en línea para evitar dependencias de maquetación rota en ancestros
+                // Estils en línia per evitar dependències de maquetació trencada en ancestres
                 printContainer.style.position = 'absolute';
                 printContainer.style.left = '0';
                 printContainer.style.top = '0';
@@ -2040,11 +2196,11 @@
                 document.body.appendChild(printContainer);
                 document.documentElement.classList.add('printing-mode-active');
                 
-                // Forzar el redibujado antes de imprimir
+                // Forçar el redibuixat abans d'imprimir
                 setTimeout(() => {
                     window.print();
                     
-                    // Limpieza y restauración
+                    // Neteja i restauració
                     setTimeout(() => {
                         document.documentElement.classList.remove('printing-mode-active');
                         if (printContainer.parentNode) {
@@ -2056,7 +2212,140 @@
 
 
             // ==========================================================================
-            // 4. DESCARGA DE PDF
+            // 3f. LÒGICA DEL NOU MÒDUL 6: FITXES D'AUTOREFLEXIÓ
+            // ==========================================================================
+            const formReflexio = document.getElementById('form-autoreflexio');
+            const planReflexioGenerat = document.getElementById('plan-reflexio-generat');
+            const btnGenerarReflexio = document.getElementById('btn-generar-reflexio');
+            const btnImprimirReflexio = document.getElementById('btn-imprimir-reflexio');
+            const btnReiniciarReflexio = document.getElementById('btn-reiniciar-reflexio');
+
+            btnGenerarReflexio.addEventListener('click', () => {
+                const forts = document.getElementById('reflexio-forts').value.trim();
+                const suports = document.getElementById('reflexio-suports').value.trim();
+
+                if (!forts || !suports) {
+                    alert("Si us plau, omple tots els camps de la fitxa de reflexió.");
+                    return;
+                }
+
+                document.getElementById('gen-reflexio-forts-val').textContent = forts;
+                document.getElementById('gen-reflexio-suports-val').textContent = suports;
+
+                formReflexio.style.display = 'none';
+                planReflexioGenerat.classList.add('active');
+                planReflexioGenerat.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            btnReiniciarReflexio.addEventListener('click', () => {
+                formReflexio.reset();
+                formReflexio.style.display = 'flex';
+                planReflexioGenerat.classList.remove('active');
+            });
+
+            btnImprimirReflexio.addEventListener('click', () => {
+                printElement('plan-reflexio-generat');
+            });
+
+
+            // ==========================================================================
+            // 3g. LÒGICA DEL NOU MÒDUL 7: GESTIÓ DEL TEMPS I REFORÇADORS
+            // ==========================================================================
+            const selectReforcador = document.getElementById('reforcador-nom');
+            const groupReforcadorCustom = document.getElementById('group-reforcador-custom');
+            const selectPrevia = document.getElementById('reforcador-previa');
+            const groupPreviaCustom = document.getElementById('group-previa-custom');
+            
+            const btnTempsSelects = document.querySelectorAll('.btn-temps-select');
+            const inputTemps = document.getElementById('reforcador-temps');
+            
+            const formReforcadors = document.getElementById('form-reforcadors');
+            const planReforcadorsGenerat = document.getElementById('plan-reforcadors-generat');
+            const btnGenerarReforcadors = document.getElementById('btn-generar-reforcadors');
+            const btnImprimirReforcadors = document.getElementById('btn-imprimir-reforcadors');
+            const btnReiniciarReforcadors = document.getElementById('btn-reiniciar-reforcadors');
+
+            // Mostrar/ocultar camps personalitzats
+            selectReforcador.addEventListener('change', () => {
+                if (selectReforcador.value === 'custom') {
+                    groupReforcadorCustom.style.display = 'flex';
+                    document.getElementById('reforcador-custom').setAttribute('required', 'required');
+                } else {
+                    groupReforcadorCustom.style.display = 'none';
+                    document.getElementById('reforcador-custom').removeAttribute('required');
+                }
+            });
+
+            selectPrevia.addEventListener('change', () => {
+                if (selectPrevia.value === 'custom') {
+                    groupPreviaCustom.style.display = 'flex';
+                    document.getElementById('reforcador-previa-custom').setAttribute('required', 'required');
+                } else {
+                    groupPreviaCustom.style.display = 'none';
+                    document.getElementById('reforcador-previa-custom').removeAttribute('required');
+                }
+            });
+
+            // Selecció de botons de temps
+            btnTempsSelects.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btnTempsSelects.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    inputTemps.value = btn.getAttribute('data-time');
+                });
+            });
+
+            btnGenerarReforcadors.addEventListener('click', () => {
+                const tempsVal = inputTemps.value;
+                const bloqueigSelect = document.getElementById('reforcador-bloqueig');
+                const bloqueigVal = bloqueigSelect.options[bloqueigSelect.selectedIndex].text.replace(/^[^\s]+\s/, ''); // treure emojis
+
+                let nomVal = selectReforcador.value;
+                if (nomVal === 'custom') {
+                    nomVal = document.getElementById('reforcador-custom').value.trim();
+                } else {
+                    nomVal = selectReforcador.options[selectReforcador.selectedIndex].text.replace(/^[^\s]+\s/, '');
+                }
+
+                let previaVal = selectPrevia.value;
+                if (previaVal === 'custom') {
+                    previaVal = document.getElementById('reforcador-previa-custom').value.trim();
+                } else {
+                    previaVal = selectPrevia.options[selectPrevia.selectedIndex].text.replace(/^[^\s]+\s/, '');
+                }
+
+                if (!nomVal || !tempsVal || !previaVal || !bloqueigVal) {
+                    alert("Si us plau, emplena tots els camps i selecciona un límit de temps.");
+                    return;
+                }
+
+                document.getElementById('gen-reforcadors-nom-val').textContent = nomVal;
+                document.getElementById('gen-reforcadors-temps-val').textContent = tempsVal;
+                document.getElementById('gen-reforcadors-previa-val').textContent = previaVal;
+                document.getElementById('gen-reforcadors-bloqueig-val').textContent = bloqueigVal;
+
+                formReforcadors.style.display = 'none';
+                planReforcadorsGenerat.classList.add('active');
+                planReforcadorsGenerat.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            btnReiniciarReforcadors.addEventListener('click', () => {
+                formReforcadors.reset();
+                btnTempsSelects.forEach(b => b.classList.remove('active'));
+                inputTemps.value = '';
+                groupReforcadorCustom.style.display = 'none';
+                groupPreviaCustom.style.display = 'none';
+                formReforcadors.style.display = 'flex';
+                planReforcadorsGenerat.classList.remove('active');
+            });
+
+            btnImprimirReforcadors.addEventListener('click', () => {
+                printElement('plan-reforcadors-generat');
+            });
+
+
+            // ==========================================================================
+            // 4. DESCÀRREGA DE PDF
             // ==========================================================================
             const btnDownload = document.getElementById('btn-download');
             const modalOverlay = document.getElementById('download-modal');
@@ -2067,31 +2356,31 @@
             const btnCloseModal = document.getElementById('btn-close-modal');
 
             btnDownload.addEventListener('click', () => {
-                // Reset de modal y apertura
+                // Reset de modal i obertura
                 modalOverlay.classList.add('active');
-                modalTitle.textContent = "Preparando descarga";
-                modalSubtitle.textContent = "Generando Cuaderno de Autodeterminación en formato PDF...";
+                modalTitle.textContent = "Preparant descàrrega";
+                modalSubtitle.textContent = "Generando Cuaderno de Autodeterminació en formato PDF...";
                 modalBar.style.width = '0%';
-                modalStatus.textContent = "0% completado";
+                modalStatus.textContent = "0% completat";
                 btnCloseModal.style.display = 'none';
 
                 let progress = 0;
                 const interval = setInterval(() => {
                     progress += 5;
                     modalBar.style.width = `${progress}%`;
-                    modalStatus.textContent = `${progress}% completado`;
+                    modalStatus.textContent = `${progress}% completat`;
 
                     if (progress >= 100) {
                         clearInterval(interval);
                         
-                        // Finalizado con éxito
-                        modalTitle.textContent = "✨ Descarga Finalizada";
-                        modalSubtitle.innerHTML = "Se ha iniciado la descarga del <strong>Cuaderno_Autodeterminacion.pdf</strong> en tu dispositivo de forma correcta.";
-                        modalStatus.textContent = "¡Listo!";
+                        // Finalitzat amb èxit
+                        modalTitle.textContent = "✨ Descàrrega Finalitzada";
+                        modalSubtitle.innerHTML = "S'ha iniciat la descàrrega del <strong>Cuaderno_Autodeterminacion.pdf</strong> en el teu dispositiu de forma correcta.";
+                        modalStatus.textContent = "Fet!";
                         btnCloseModal.style.display = 'inline-block';
                         btnCloseModal.focus();
 
-                        // Inicia la descarga del archivo PDF real
+                        // Inicia la descàrrega del fitxer PDF real
                         triggerDownload();
                     }
                 }, 100);
@@ -2102,7 +2391,7 @@
                 btnDownload.focus();
             });
 
-            // Permite cerrar el modal pulsando la tecla Escape para mejorar la accesibilidad cognitiva y física
+            // Permet tancar el modal prement la tecla Escape per millorar l'accessibilitat cognitiva i física
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
                     modalOverlay.classList.remove('active');
@@ -2121,12 +2410,12 @@
 
 
             // ==========================================================================
-            // 5. GESTIÓN DEL MODO DE ALTO CONTRASTE
+            // 5. GESTIÓ DEL MODO D'ALT CONTRAST
             // ==========================================================================
             const btnContrast = document.getElementById('toggle-contrast');
             const htmlElement = document.documentElement;
 
-            // Leemos preferencia guardada (si existe)
+            // Llegim preferència guardada (si existeix)
             if (localStorage.getItem('high-contrast') === 'true') {
                 htmlElement.classList.add('high-contrast');
                 btnContrast.innerHTML = '<span>👁️</span> <strong>Contraste Estándar</strong>';
