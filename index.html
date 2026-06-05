@@ -1410,7 +1410,7 @@
                     <form id="form-plan-joven" class="interactive-form" onsubmit="event.preventDefault();">
                         <div class="form-group">
                             <label for="joven-nombre" class="form-label">El teu nom:</label>
-                            <input type="text" id="joven-nombre" class="form-input" placeholder="Escriu el teu nom aquí" required>
+                            <input type="text" id="joven-nombre" class="form-input" placeholder="Escriu el teu nom aquí">
                         </div>
                         
                         <div class="form-group">
@@ -1435,9 +1435,9 @@
                         <div class="form-group">
                             <label class="form-label">2. El teu Pla de Resolució de Reptes (Acció Agent):</label>
                             <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.25rem;">L'agència es demostra anticipant problemes i estructurant passos concrets:</p>
-                            <input type="text" id="joven-paso1" class="form-input" style="margin-bottom:0.5rem;" placeholder="Quin obstacle o barrera et podries trobar en intentar aquesta meta?" required>
-                            <input type="text" id="joven-paso2" class="form-input" style="margin-bottom:0.5rem;" placeholder="Quina estratègia o solució aplicaràs davant d'aquest obstacle?" required>
-                            <input type="text" id="joven-paso3" class="form-input" placeholder="Quin serà el teu primer pas pràctic per començar el pla?" required>
+                            <input type="text" id="joven-paso1" class="form-input" style="margin-bottom:0.5rem;" placeholder="Quin obstacle o barrera et podries trobar en intentar aquesta meta?">
+                            <input type="text" id="joven-paso2" class="form-input" style="margin-bottom:0.5rem;" placeholder="Quina estratègia o solució aplicaràs davant d'aquest obstacle?">
+                            <input type="text" id="joven-paso3" class="form-input" placeholder="Quin serà el teu primer pas pràctic per començar el pla?">
                         </div>
 
                         <div class="form-group">
@@ -1518,12 +1518,12 @@
                     <form id="form-autoreflexio" class="interactive-form" onsubmit="event.preventDefault();">
                         <div class="form-group">
                             <label for="reflexio-forts" class="form-label">1. Què se'm dóna bé? (Els meus punts forts, talents o interessos especials):</label>
-                            <textarea id="reflexio-forts" class="form-textarea" rows="3" placeholder="Ex: Sóc molt bo en la memòria visual, m'encanta el disseny, dibuixar o programar, sóc molt ordenat amb les meves coses..." required></textarea>
+                            <textarea id="reflexio-forts" class="form-textarea" rows="3" placeholder="Ex: Sóc molt bo en la memòria visual, m'encanta el disseny, dibuixar o programar, sóc molt ordenat amb les meves coses..."></textarea>
                         </div>
                         
                         <div class="form-group">
                             <label for="reflexio-suports" class="form-label">2. En què necessito suport? (Tasques o situacions que em resulten difícils o estressants):</label>
-                            <textarea id="reflexio-suports" class="form-textarea" rows="3" placeholder="Ex: Em costa començar converses amb desconeguts, em saturo si hi ha molt de soroll, em costa organitzar tasques quan són molt llargues..." required></textarea>
+                            <textarea id="reflexio-suports" class="form-textarea" rows="3" placeholder="Ex: Em costa començar converses amb desconeguts, em saturo si hi ha molt de soroll, em costa organitzar tasques quan són molt llargues..."></textarea>
                         </div>
 
                         <button type="button" id="btn-generar-reflexio" class="btn-cta" style="margin-top:1rem;">
@@ -1750,7 +1750,7 @@
                 <form id="form-plan-familia" class="interactive-form" onsubmit="event.preventDefault();">
                     <div class="form-group">
                         <label for="familia-meta-joven" class="form-label">1. Quina meta treballarà el jove? (Escriu-la de mutu acord):</label>
-                        <input type="text" id="familia-meta-joven" class="form-input" placeholder="Exemple: Organitzar el seu horari d'estudis de forma independent" required>
+                        <input type="text" id="familia-meta-joven" class="form-input" placeholder="Exemple: Organitzar el seu horari d'estudis de forma independent">
                     </div>
 
                     <div class="form-group">
@@ -1778,7 +1778,7 @@
                     <div class="form-group">
                         <label for="familia-retirada" class="form-label">3. Pla de Retirada Progressiva (Foment del Locus de Control):</label>
                         <p style="font-size:0.9rem; color:var(--text-muted);">Com aniràs reduint aquest suport a mesura que el jove guanyi seguretat?</p>
-                        <textarea id="familia-retirada" class="form-textarea" rows="3" placeholder="Exemple: Les primeres dues setmanes farem la sessió de revisió junts. A partir de la tercera setmana, ell prepararà l'agenda sol i nosaltres només revisarem el resultat final el diumenge." required></textarea>
+                        <textarea id="familia-retirada" class="form-textarea" rows="3" placeholder="Exemple: Les primeres dues setmanes farem la sessió de revisió junts. A partir de la tercera setmana, ell prepararà l'agenda sol i nosaltres només revisarem el resultat final el diumenge."></textarea>
                     </div>
 
                     <button type="button" id="btn-generar-familia" class="btn-cta" style="margin-top:1rem;">
@@ -2051,10 +2051,10 @@
             selectMetaJoven.addEventListener('change', () => {
                 if (selectMetaJoven.value === 'custom') {
                     groupMetaCustom.style.display = 'flex';
-                    document.getElementById('joven-meta-custom').setAttribute('required', 'required');
+                    // document.getElementById('joven-meta-custom').setAttribute('required', 'required');
                 } else {
                     groupMetaCustom.style.display = 'none';
-                    document.getElementById('joven-meta-custom').removeAttribute('required');
+                    // document.getElementById('joven-meta-custom').removeAttribute('required');
                 }
             });
 
@@ -2072,29 +2072,25 @@
                     metaVal = metaVal.replace(/^[^\s]+\s/, ''); // treure emojis
                 }
 
-                if (!nombre || !paso1 || !paso2 || !paso3 || (selectMetaJoven.value === 'custom' && !metaVal)) {
-                    alert("Si us plau, omple tots els camps requerits per crear el teu Pla.");
-                    return;
-                }
-
+                // Totes les caselles són opcionals. Permetem generar el pla fins i tot buit per escriure a mà.
                 // Obtenir els suports seleccionats
                 const apoyosChecked = Array.from(document.querySelectorAll('input[name="joven-apoyos"]:checked'))
                                            .map(el => el.value);
                 
-                let apoyosTexto = 'Cap (Planificació i acció 100% autònoma)';
+                let apoyosTexto = 'Cap o per especificar a mà (Foment de l'autonomia)';
                 if (apoyosChecked.length > 0 && !apoyosChecked.includes('Cap')) {
                     apoyosTexto = apoyosChecked.map(a => `Suport ${a}`).join(', ');
                 }
 
-                // Omplir la targeta visual
-                document.getElementById('gen-joven-nombre-val').textContent = nombre;
-                document.getElementById('gen-joven-meta-val').textContent = metaVal;
+                // Omplir la targeta visual amb suport per a camps buits (línies de punts)
+                document.getElementById('gen-joven-nombre-val').textContent = nombre || "..................................................";
+                document.getElementById('gen-joven-meta-val').textContent = metaVal || "..................................................";
                 
                 const genPasosOl = document.getElementById('gen-joven-pasos-val');
                 genPasosOl.innerHTML = `
-                    <li><strong>Obstacle anticipat:</strong> ${paso1}</li>
-                    <li><strong>Estratègia de solució:</strong> ${paso2}</li>
-                    <li><strong>Primer pas pràctic:</strong> ${paso3}</li>
+                    <li><strong>Obstacle anticipat:</strong> ${paso1 || ".................................................."}</li>
+                    <li><strong>Estratègia de solució:</strong> ${paso2 || ".................................................."}</li>
+                    <li><strong>Primer pas pràctic:</strong> ${paso3 || ".................................................."}</li>
                 `;
                 document.getElementById('gen-joven-apoyos-val').textContent = apoyosTexto;
 
@@ -2133,27 +2129,20 @@
                 const apoyoTem = document.getElementById('familia-apoyo-temporal').value.trim();
                 const planRetirada = document.getElementById('familia-retirada').value.trim();
 
-                if (!metaJoven || !planRetirada) {
-                    alert("Si us plau, omple almenys la meta del jove i el pla de retirada de suports.");
-                    return;
-                }
-
-                // Omplir la targeta visual
-                document.getElementById('gen-familia-meta-val').textContent = metaJoven;
+                // Totes les caselles són opcionals. Permetem generar la fitxa buida per escriure a mà.
+                // Omplir la targeta visual amb suport per a camps buits (línies de punts)
+                document.getElementById('gen-familia-meta-val').textContent = metaJoven || "........................................................................";
                 
                 const apoyosListUl = document.getElementById('gen-familia-apoyos-val');
                 apoyosListUl.innerHTML = '';
                 
-                if (apoyoEst) apoyosListUl.innerHTML += `<li><strong>Estructural:</strong> ${apoyoEst}</li>`;
-                if (apoyoTec) apoyosListUl.innerHTML += `<li><strong>Tecnòlogic:</strong> ${apoyoTec}</li>`;
-                if (apoyoRel) apoyosListUl.innerHTML += `<li><strong>Relacional:</strong> ${apoyoRel}</li>`;
-                if (apoyoTem) apoyosListUl.innerHTML += `<li><strong>Temporal:</strong> ${apoyoTem}</li>`;
-                
-                if (apoyosListUl.children.length === 0) {
-                    apoyosListUl.innerHTML = '<li><em>No s\'havia detallat suports (Foment d\'autonomia 100% independent)</em></li>';
-                }
+                // Si estan buits, mostrem línies de punts per poder-los omplir a mà en el document imprès
+                apoyosListUl.innerHTML += `<li><strong>Estructural:</strong> ${apoyoEst || "........................................................................"}</li>`;
+                apoyosListUl.innerHTML += `<li><strong>Tecnòlogic:</strong> ${apoyoTec || "........................................................................"}</li>`;
+                apoyosListUl.innerHTML += `<li><strong>Relacional:</strong> ${apoyoRel || "........................................................................"}</li>`;
+                apoyosListUl.innerHTML += `<li><strong>Temporal:</strong> ${apoyoTem || "........................................................................"}</li>`;
 
-                document.getElementById('gen-familia-retirada-val').textContent = planRetirada;
+                document.getElementById('gen-familia-retirada-val').textContent = planRetirada || "........................................................................";
 
                 // Ocultar formulario y mostrar resultado
                 formFamilia.style.display = 'none';
@@ -2224,13 +2213,9 @@
                 const forts = document.getElementById('reflexio-forts').value.trim();
                 const suports = document.getElementById('reflexio-suports').value.trim();
 
-                if (!forts || !suports) {
-                    alert("Si us plau, omple tots els camps de la fitxa de reflexió.");
-                    return;
-                }
-
-                document.getElementById('gen-reflexio-forts-val').textContent = forts;
-                document.getElementById('gen-reflexio-suports-val').textContent = suports;
+                // Totes les caselles són opcionals. Permetem generar la fitxa buida per escriure a mà.
+                document.getElementById('gen-reflexio-forts-val').textContent = forts || "................................................................................................................................................";
+                document.getElementById('gen-reflexio-suports-val').textContent = suports || "................................................................................................................................................";
 
                 formReflexio.style.display = 'none';
                 planReflexioGenerat.classList.add('active');
@@ -2269,20 +2254,20 @@
             selectReforcador.addEventListener('change', () => {
                 if (selectReforcador.value === 'custom') {
                     groupReforcadorCustom.style.display = 'flex';
-                    document.getElementById('reforcador-custom').setAttribute('required', 'required');
+                    // document.getElementById('reforcador-custom').setAttribute('required', 'required');
                 } else {
                     groupReforcadorCustom.style.display = 'none';
-                    document.getElementById('reforcador-custom').removeAttribute('required');
+                    // document.getElementById('reforcador-custom').removeAttribute('required');
                 }
             });
 
             selectPrevia.addEventListener('change', () => {
                 if (selectPrevia.value === 'custom') {
                     groupPreviaCustom.style.display = 'flex';
-                    document.getElementById('reforcador-previa-custom').setAttribute('required', 'required');
+                    // document.getElementById('reforcador-previa-custom').setAttribute('required', 'required');
                 } else {
                     groupPreviaCustom.style.display = 'none';
-                    document.getElementById('reforcador-previa-custom').removeAttribute('required');
+                    // document.getElementById('reforcador-previa-custom').removeAttribute('required');
                 }
             });
 
@@ -2314,15 +2299,11 @@
                     previaVal = selectPrevia.options[selectPrevia.selectedIndex].text.replace(/^[^\s]+\s/, '');
                 }
 
-                if (!nomVal || !tempsVal || !previaVal || !bloqueigVal) {
-                    alert("Si us plau, emplena tots els camps i selecciona un límit de temps.");
-                    return;
-                }
-
-                document.getElementById('gen-reforcadors-nom-val').textContent = nomVal;
-                document.getElementById('gen-reforcadors-temps-val').textContent = tempsVal;
-                document.getElementById('gen-reforcadors-previa-val').textContent = previaVal;
-                document.getElementById('gen-reforcadors-bloqueig-val').textContent = bloqueigVal;
+                // Totes les caselles són opcionals. Permetem generar el pacte buit per escriure a mà.
+                document.getElementById('gen-reforcadors-nom-val').textContent = nomVal || "..................................................";
+                document.getElementById('gen-reforcadors-temps-val').textContent = tempsVal ? (tempsVal + " minuts") : "..................................................";
+                document.getElementById('gen-reforcadors-previa-val').textContent = previaVal || "..................................................";
+                document.getElementById('gen-reforcadors-bloqueig-val').textContent = bloqueigVal || "..................................................";
 
                 formReforcadors.style.display = 'none';
                 planReforcadorsGenerat.classList.add('active');
