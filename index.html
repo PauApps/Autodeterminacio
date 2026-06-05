@@ -1476,7 +1476,7 @@
                         
                         // Finalitzat amb èxit
                         modalTitle.textContent = "✨ Descàrrega Enllestida";
-                        modalSubtitle.innerHTML = "S'ha iniciat la descàrrega del <strong>Quadern_Autodeterminacio_Joves.pdf</strong> al teu dispositiu de forma correcta.";
+                        modalSubtitle.innerHTML = "S'ha iniciat la descàrrega del <strong>Cuaderno_Autodeterminacion.pdf</strong> al teu dispositiu de forma correcta.";
                         modalStatus.textContent = "Fet!";
                         btnCloseModal.style.display = 'inline-block';
                         btnCloseModal.focus();
@@ -1502,8 +1502,8 @@
 
             function triggerDownload() {
                 const a = document.createElement('a');
-                a.href = 'Quadern_Autodeterminacio_Joves.pdf';
-                a.download = 'Quadern_Autodeterminacio_Joves.pdf';
+                a.href = 'Cuaderno_Autodeterminacion.pdf';
+                a.download = 'Cuaderno_Autodeterminacion.pdf';
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
