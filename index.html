@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autodeterminació | Ser protagonista de la teva pròpia vida</title>
+    <meta name="description" content="Eines pràctiques per a joves amb Autisme i les seves famílies per fomentar l'autodeterminació en la transició a la vida adulta.">
+    
+    <!-- Google Fonts: Nunito per a una millor accessibilitat cognitiva i llegibilitat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           1. VARIABLES DE DISSENY I PALETA DE COLORS (Tons calms i de baix contrast agressiu)
+           ========================================================================== */
+        :root {
+            /* Colors del mode estàndard (calmats i naturals) */
+            --bg-page: #fdf6ee;            /* Sorra clar/crema - fons molt relaxant */
+            --bg-card: #ffffff;            /* Blanc pur per a targetes */
+            --bg-card-hover: #fcfcfc;
+            --text-main: #2b3a42;          /* Blau-gris fosc - millor que negre pur */
+            --text-muted: #576d7a;         /* Blau-gris mitjà per a textos secundaris */
+            --primary: #4a6b82;            /* Blau grisenc calmat */
+            --primary-hover: #334d61;      /* Blau més fosc per a interacció hover */
+            --primary-light: #e6eef3;      /* Blau molt clar de fons */
+            --accent: #b08e72;             /* Terra suau */
+            --accent-hover: #9c7b60;
+            --accent-light: #f5ebd9;       /* Sorra fosc de fons */
+            --border-color: #e3decb;       /* Vores suaus */
+            --focus-outline: #b08e72;      /* Color clau per al focus del teclat */
+            --success: #4a7c59;            /* Verd calmat, no massa brillant */
+            
+            /* Temps de transicions suaus */
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition-fast: all 0.15s ease-in-out;
+            
+            /* Ràdius arrodonits amigables */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            
+            /* Ombres suaus per a una estètica premium */
+            --shadow-subtle: 0 4px 12px rgba(43, 58, 66, 0.05);
+            --shadow-md: 0 8px 24px rgba(43, 58, 66, 0.08);
+            
+            /* Mida màxima de la web */
+            --container-max-width: 1000px;
+        }
+
+        /* ==========================================================================
+           2. MODE D'ALT CONTRAST (Millora l'accessibilitat visual si l'usuari ho requereix)
+           ========================================================================== */
+        html.high-contrast {
+            --bg-page: #ffffff;
+            --bg-card: #ffffff;
+            --text-main: #000000;
+            --text-muted: #1a1a1a;
+            --primary: #002b49;            /* Blau ultra fosc de contrast màxim */
+            --primary-hover: #000000;
+            --primary-light: #e6f0fa;
+            --accent: #5c3500;             /* Marró de contrast alt */
+            --accent-hover: #000000;
+            --accent-light: #fff2cc;
+            --border-color: #000000;
+            --focus-outline: #ff0000;      /* Vermell pur per al focus en alt contrast */
+            --success: #004d00;
+            --shadow-subtle: none;
+            --shadow-md: none;
+        }
+        
+        html.high-contrast * {
+            border-color: #000000 !important;
+            text-shadow: none !important;
+        }
+
+        /* ==========================================================================
+           3. ESTILS BÀSICS I TIPOGRAFIA
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Indicador de focus global */
+        *:focus-visible {
+            outline: 3px solid var(--focus-outline);
+            outline-offset: 3px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 2rem 0 4rem 0;
+        }
+
+        /* Opcions d'accessibilitat flotants */
+        .accessibility-bar {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-access {
+            background: none;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-fast);
+        }
+
+        .btn-access:hover, .btn-access:focus {
+            background-color: var(--primary);
+            color: var(--bg-card);
+        }
+
+        /* ==========================================================================
+           4. CAPÇALERA DE LA WEB
+           ========================================================================== */
+        header {
+            text-align: center;
+            padding: 3rem 1rem 2rem 1rem;
+            background: linear-gradient(180deg, var(--accent-light) 0%, transparent 100%);
+            border-bottom: 1px solid rgba(227, 222, 203, 0.4);
+        }
+
+        .brand-pill {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        header p.lead {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* ==========================================================================
+           5. MENÚ DE PESTANYES (TABS NAVEGACIÓ)
+           ========================================================================== */
+        .tabs-nav-container {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tabs-list {
+            display: flex;
+            background-color: rgba(74, 107, 130, 0.08);
+            padding: 0.5rem;
+            border-radius: var(--radius-md);
+            list-style: none;
+            gap: 0.25rem;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid rgba(227, 222, 203, 0.5);
+        }
+
+        .tab-item {
+            flex: 1;
+        }
+
+        .tab-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.9rem 1rem;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Estats de la pestanya activa */
+        .tab-btn[aria-selected="true"] {
+            background-color: var(--bg-card);
+            color: var(--primary);
+            box-shadow: var(--shadow-subtle);
+            outline: 2px solid var(--primary);
+        }
+
+        .tab-btn:hover:not([aria-selected="true"]) {
+            background-color: rgba(255, 255, 255, 0.4);
+            color: var(--text-main);
+        }
+
+        /* ==========================================================================
+           6. SECCIÓ GENERAL DE CONTINGUTS (PANELLS DE PESTANYES)
+           ========================================================================== */
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Targeta genèrica */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition-smooth);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* ==========================================================================
+           7. PESTANYA 1: INICI (DISSENY I CTA)
+           ========================================================================== */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .intro-text p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .intro-highlight {
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-left: 5px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--text-main);
+        }
+
+        .cta-container {
+            text-align: center;
+            background-color: var(--accent-light);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+            border: 2px dashed var(--accent);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-cta {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 1.2rem 2.2rem;
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 800;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(74, 107, 130, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .btn-cta:hover, .btn-cta:focus {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 107, 130, 0.4);
+        }
+
+        .btn-cta:active {
+            transform: translateY(0);
+        }
+
+        .download-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* ==========================================================================
+           8. PESTANYA 2: PER A JOVES (MÒDULS INTERACTIUS)
+           ========================================================================== */
+        .joves-modules-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        /* Mòdul 1: Targeta simplificada */
+        .module-coneixement {
+            background-color: var(--accent-light);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-coneixement::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background-color: var(--accent);
+        }
+
+        .module-coneixement p {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* Mòdul 2: Semàfor interactiu */
+        .semafor-container {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .semafor-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                justify-items: center;
+            }
+        }
+
+        .semafor-box {
+            width: 140px;
+            background-color: #2b3a42; /* Carcassa de color blau fosc metal·litzat */
+            border-radius: 40px;
+            padding: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 4px solid #3d515c;
+        }
+
+        .semafor-llum {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 6px solid #1f2a30;
+            background-color: var(--light-off);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.4);
+            position: relative;
+        }
+
+        /* Estats apagat/encès de cada color */
+        .llum-vermella {
+            --light-off: #59251d;
+            --light-on: #e76f51;
+            --light-shadow: rgba(231, 111, 81, 0.6);
+        }
+
+        .llum-groga {
+            --light-off: #5e4f2a;
+            --light-on: #e9c46a;
+            --light-shadow: rgba(233, 196, 106, 0.6);
+        }
+
+        .llum-verda {
+            --light-off: #1b3823;
+            --light-on: #4a7c59;
+            --light-shadow: rgba(74, 124, 89, 0.6);
+        }
+
+        /* Llum encesa activa */
+        .semafor-llum.active {
+            background-color: var(--light-on);
+            color: #ffffff;
+            box-shadow: 0 0 25px 8px var(--light-shadow);
+            transform: scale(1.08);
+            border-color: #ffffff;
+        }
+
+        .semafor-llum:hover:not(.active) {
+            transform: scale(1.03);
+            border-color: #576d7a;
+        }
+
+        .semafor-feedback-box {
+            background-color: var(--bg-page);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .semafor-feedback-box.highlight-vermell {
+            border-color: #e76f51;
+            background-color: #fef4f2;
+        }
+
+        .semafor-feedback-box.highlight-groga {
+            border-color: #e9c46a;
+            background-color: #fefbf2;
+        }
+
+        .semafor-feedback-box.highlight-verda {
+            border-color: #4a7c59;
+            background-color: #f4faf6;
+        }
+
+        .semafor-hint {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .semafor-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-align: center;
+            animation: textPop 0.3s ease-out;
+            color: var(--text-main);
+        }
+
+        .semafor-state-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        @keyframes textPop {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Mòdul 3: Cicle de l'acció lineal responsiu */
+        .cicle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 1rem 0.5rem;
+        }
+
+        .cicle-item {
+            flex: 1;
+            background-color: var(--bg-page);
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 0.5rem;
+            text-align: center;
+            position: relative;
+            min-width: 100px;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition-smooth);
+        }
+
+        .cicle-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .cicle-num {
+            display: inline-flex;
+            width: 28px;
+            height: 28px;
+            background-color: var(--primary);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 800;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .cicle-name {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cicle-arrow {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Adaptabilitat del cicle per a mòbils */
+        @media (max-width: 768px) {
+            .cicle-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .cicle-arrow {
+                transform: rotate(90deg);
+                margin: 0.25rem 0;
+            }
+            .cicle-item {
+                width: 100%;
+                min-width: unset;
+                padding: 1rem;
+            }
+        }
+
+        /* Mòdul 4: Checklist d'autodeterminació */
+        .progress-section {
+            margin-bottom: 2rem;
+            background-color: var(--primary-light);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(74, 107, 130, 0.15);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .progress-bar-outer {
+            width: 100%;
+            height: 14px;
+            background-color: rgba(74, 107, 130, 0.15);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            width: 0%;
+            background-color: var(--primary);
+            border-radius: 50px;
+            transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .checklist-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Estil per a files de checklist accessibles */
+        .checklist-item {
+            display: block;
+        }
+
+        .checklist-label {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1.25rem 1.5rem;
+            background-color: var(--bg-page);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 1.15rem;
+            font-weight: 600;
+            user-select: none;
+            position: relative;
+        }
+
+        /* Amaguem visualment la checkbox nativa de manera accessible per estilitzar-la completament */
+        .checklist-checkbox {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* Checkbox simulada a mida gran (accessibilitat física/clic) */
+        .custom-checkbox {
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--text-muted);
+            border-radius: var(--radius-sm);
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .checklist-checkbox:focus-visible + .custom-checkbox {
+            outline: 3px solid var(--focus-outline);
+            outline-offset: 3px;
+        }
+
+        /* Checkbox en estat actiu */
+        .checklist-checkbox:checked + .custom-checkbox {
+            background-color: var(--success);
+            border-color: var(--success);
+        }
+
+        /* El símbol de validat (l'aspa) */
+        .custom-checkbox::after {
+            content: "✓";
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 800;
+            display: none;
+        }
+
+        .checklist-checkbox:checked + .custom-checkbox::after {
+            display: block;
+        }
+
+        /* Efectes visuals a la fila sencera en estar validat */
+        .checklist-checkbox:checked ~ .checklist-text {
+            color: var(--text-muted);
+            text-decoration: line-through;
+            opacity: 0.85;
+        }
+
+        .checklist-label:hover {
+            background-color: var(--bg-card);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        /* ==========================================================================
+           9. PESTANYA 3: PER A FAMÍLIES (TARGETES I TAULA RESPONSIVA)
+           ========================================================================== */
+        .families-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .families-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sub-bloc-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .families-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .families-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            font-size: 1.05rem;
+        }
+
+        /* Marcador de llista accessible i bonic */
+        .families-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.8rem;
+            position: absolute;
+            left: 0.25rem;
+            top: -0.35rem;
+        }
+
+        .families-list strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Taula de suports adaptada a mòbils */
+        .table-responsive-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+
+        .suports-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+
+        .suports-table th {
+            background-color: var(--primary);
+            color: #ffffff;
+            font-weight: 800;
+            padding: 1.2rem;
+            border: 1px solid var(--primary);
+        }
+
+        .suports-table td {
+            padding: 1.2rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            vertical-align: top;
+        }
+
+        .suports-table tr:nth-child(even) td {
+            background-color: var(--bg-page);
+        }
+
+        /* Conversió de la taula a format targeta en pantalles mòbils */
+        @media (max-width: 600px) {
+            .suports-table, .suports-table tbody, .suports-table tr, .suports-table td {
+                display: block;
+                width: 100%;
+            }
+            .suports-table thead {
+                display: none; /* Amaguem la capçalera de la taula en mòbils */
+            }
+            .suports-table tr {
+                margin-bottom: 1.5rem;
+                border: 2px solid var(--border-color);
+                border-radius: var(--radius-md);
+                overflow: hidden;
+                box-shadow: var(--shadow-subtle);
+            }
+            .suports-table td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .suports-table td:last-child {
+                border-bottom: none;
+            }
+            /* Generem etiquetes a l'esquerra per al contingut de cada cel·la */
+            .suports-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 1.2rem;
+                width: 45%;
+                font-weight: 800;
+                text-align: left;
+                color: var(--primary);
+            }
+        }
+
+        /* ==========================================================================
+           10. MODALS DE CONFIRMACIÓ I ALTES (SIMULADORS DE DESCARREGA)
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(43, 58, 66, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 3px solid var(--primary);
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: modalPop 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.9) translateY(20px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .modal-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal-loader {
+            width: 100%;
+            height: 12px;
+            background-color: var(--primary-light);
+            border-radius: 50px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .modal-loader-bar {
+            height: 100%;
+            width: 0%;
+            background-color: var(--primary);
+            border-radius: 50px;
+            transition: width 0.1s linear;
+        }
+
+        .modal-status-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-modal-close {
+            background-color: var(--accent);
+            color: #ffffff;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: none;
+        }
+
+        .btn-modal-close:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* ==========================================================================
+           11. FOOTER
+           ========================================================================== */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-tag {
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Visibilitat per a lectors de pantalla de manera accessible (SR-ONLY) */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA D'ACCESSIBILITAT SUPERIOR -->
+    <div class="accessibility-bar" aria-label="Opcions d'accessibilitat">
+        <button id="toggle-contrast" class="btn-access" title="Canvia el contrast de la pàgina per a millorar la lectura">
+            <span>👁️</span> <strong>Contrast Alt</strong>
+        </button>
+    </div>
+
+    <!-- CAPÇALERA -->
+    <header>
+        <span class="brand-pill" aria-hidden="true">Autodeterminació</span>
+        <h1>Ser protagonista de la teva pròpia vida</h1>
+        <p class="lead">Eines pràctiques per a joves amb Autisme i les seves famílies per fomentar l'autodeterminació en la transició a la vida adulta.</p>
+        
+        <!-- NAVEGACIÓ PER PESTANYES (ARIA-COMPLIANT) -->
+        <div class="tabs-nav-container">
+            <ul class="tabs-list" role="tablist" aria-label="Seccions de la web">
+                <li class="tab-item" role="presentation">
+                    <button class="tab-btn" id="tab-inici" role="tab" aria-selected="true" aria-controls="panel-inici" tabindex="0">
+                        🏠 Inici
+                    </button>
+                </li>
+                <li class="tab-item" role="presentation">
+                    <button class="tab-btn" id="tab-joves" role="tab" aria-selected="false" aria-controls="panel-joves" tabindex="-1">
+                        🧑‍🎓 Per a Joves
+                    </button>
+                </li>
+                <li class="tab-item" role="presentation">
+                    <button class="tab-btn" id="tab-families" role="tab" aria-selected="false" aria-controls="panel-families" tabindex="-1">
+                        👥 Per a Famílies
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main class="container">
+
+        <!-- ==========================================================================
+             PANELL 1: INICI
+             ========================================================================== -->
+        <section id="panel-inici" class="tab-panel active" role="tabpanel" aria-labelledby="tab-inici" tabindex="0">
+            <h2 class="sr-only">Secció d'Inici</h2>
+            <div class="card">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h3 class="section-title">Què significa ser el protagonista?</h3>
+                        <p>L'<strong>autodeterminació</strong> és el dret i l'habilitat que et permeten prendre el control de la teva pròpia vida. Significa ser la persona que pren les decisions importants, però també les petites eleccions del dia a dia.</p>
+                        <p>No vol dir fer-ho tot sol sense ajuda. Al contrari: l'autodeterminació consisteix a conèixer-te a tu mateix, saber què vols i aprendre a demanar els suports necessaris perquè es compleixin els teus objectius de vida.</p>
+                        
+                        <div class="intro-highlight">
+                            Elecció, expressió, proposta i acció en els moments grans i petits de cada dia, en lloc de deixar que les coses simplement passin.
+                        </div>
+                    </div>
+                    
+                    <!-- CRIDA A L'ACCÓ (CTA) -->
+                    <div class="cta-container" aria-label="Descarregar recurs">
+                        <h4 style="font-size: 1.25rem; font-weight:800; margin-bottom:1rem; color:var(--text-main);">Vols aprofundir?</h4>
+                        <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.5rem;">Hem preparat una guia visual interactiva de treball per a fer servir a casa o a l'aula.</p>
+                        <button id="btn-download" class="btn-cta">
+                            <span>📥</span> Descarregar Quadern complet (PDF)
+                        </button>
+                        <span class="download-info" aria-hidden="true">
+                            <span>📄</span> PDF Interactiu • 4.2 MB
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             PANELL 2: PER A JOVES
+             ========================================================================== -->
+        <section id="panel-joves" class="tab-panel" role="tabpanel" aria-labelledby="tab-joves" tabindex="0">
+            <h2 class="sr-only">Eines per a Joves</h2>
+            <div class="joves-modules-grid">
+                
+                <!-- Mòdul 1: Em conec i Trio -->
+                <article class="card module-coneixement">
+                    <h3 class="section-title">🌟 Mòdul 1: Em conec i Trio</h3>
+                    <p>Sé quines habilitats tinc i en què necessito suport. Trio la millor opció pensant en el possible resultat.</p>
+                </article>
+
+                <!-- Mòdul 2: El Semàfor de l'Autorregulació -->
+                <article class="card">
+                    <h3 class="section-title">🚦 Mòdul 2: El Semàfor de l'Autorregulació</h3>
+                    <p style="margin-bottom: 2rem; color: var(--text-muted);">Quan sentis una emoció intensa o et notis nerviós/a, pots utilitzar aquesta eina visual. Clica sobre cadascuna de les llums per veure què cal fer:</p>
+                    
+                    <div class="semafor-container">
+                        <!-- Semàfor físic dibuixat -->
+                        <div class="semafor-box" role="group" aria-label="Colors del semàfor per a l'autoregulació">
+                            <button id="semafor-vermell" class="semafor-llum llum-vermella" aria-label="Llum Vermella" aria-pressed="false">
+                                <span class="sr-only">Llum Vermella: Paro</span>
+                                🛑
+                            </button>
+                            <button id="semafor-groc" class="semafor-llum llum-groga" aria-label="Llum Groga" aria-pressed="false">
+                                <span class="sr-only">Llum Groga: Penso</span>
+                                ⚠️
+                            </button>
+                            <button id="semafor-verd" class="semafor-llum llum-verda" aria-label="Llum Verda" aria-pressed="false">
+                                <span class="sr-only">Llum Verda: Actuo</span>
+                                ✅
+                            </button>
+                        </div>
+                        
+                        <!-- Caixa de missatge associada -->
+                        <div id="semafor-feedback" class="semafor-feedback-box">
+                            <p class="semafor-hint">Fes clic en una de les llums del semàfor per començar.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mòdul 3: El Cicle de l'Acció -->
+                <article class="card">
+                    <h3 class="section-title">🔄 Mòdul 3: El Cicle de l'Acció</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Cada decisió o acció que prens segueix naturalment aquest camí seqüencial. Segueix el camí per obtenir el millor resultat:</p>
+                    
+                    <div class="cicle-container" aria-label="Flux del cicle de l'acció en sis passos">
+                        <div class="cicle-item">
+                            <span class="cicle-num">1</span>
+                            <div class="cicle-name">Paro</div>
+                        </div>
+                        <div class="cicle-arrow" aria-hidden="true">➔</div>
+                        <div class="cicle-item">
+                            <span class="cicle-num">2</span>
+                            <div class="cicle-name">Penso</div>
+                        </div>
+                        <div class="cicle-arrow" aria-hidden="true">➔</div>
+                        <div class="cicle-item">
+                            <span class="cicle-num">3</span>
+                            <div class="cicle-name">Trio</div>
+                        </div>
+                        <div class="cicle-arrow" aria-hidden="true">➔</div>
+                        <div class="cicle-item">
+                            <span class="cicle-num">4</span>
+                            <div class="cicle-name">Actuo</div>
+                        </div>
+                        <div class="cicle-arrow" aria-hidden="true">➔</div>
+                        <div class="cicle-item">
+                            <span class="cicle-num">5</span>
+                            <div class="cicle-name">Reviso</div>
+                        </div>
+                        <div class="cicle-arrow" aria-hidden="true">➔</div>
+                        <div class="cicle-item">
+                            <span class="cicle-num">6</span>
+                            <div class="cicle-name">Aprendre</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mòdul 4: El meu Checklist -->
+                <article class="card">
+                    <h3 class="section-title">📝 Mòdul 4: El meu Checklist d'Autodeterminació</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Practica la teva autodeterminació marcant els passos que aconsegueixes completar. Pots comprovar com avança la teva barra de progrés!</p>
+                    
+                    <!-- Barra de progrés -->
+                    <div class="progress-section" aria-live="polite">
+                        <div class="progress-header">
+                            <span>El teu progrés d'autodeterminació</span>
+                            <span id="progress-percent">0% completat</span>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div id="progress-bar" class="progress-bar-inner"></div>
+                        </div>
+                        <div id="progress-text-summary" style="margin-top:0.75rem; font-size:0.95rem; font-weight:600; color:var(--text-muted);">
+                            Has completat 0 de 5 accions.
+                        </div>
+                    </div>
+
+                    <!-- Caselles de verificació -->
+                    <ul class="checklist-list" aria-label="Llista de comprovació d'autodeterminació">
+                        <li class="checklist-item">
+                            <label class="checklist-label">
+                                <input type="checkbox" class="checklist-checkbox" value="1">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="checklist-text">Sé què vull o què necessito.</span>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <label class="checklist-label">
+                                <input type="checkbox" class="checklist-checkbox" value="2">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="checklist-text">Penso en les meves opcions (en tinc més d'una).</span>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <label class="checklist-label">
+                                <input type="checkbox" class="checklist-checkbox" value="3">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="checklist-text">Trio la millor opció per a mi (encara que no sigui perfecta).</span>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <label class="checklist-label">
+                                <input type="checkbox" class="checklist-checkbox" value="4">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="checklist-text">Faig un pla pas a pas i començo tot i tenir nervis.</span>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
+                            <label class="checklist-label">
+                                <input type="checkbox" class="checklist-checkbox" value="5">
+                                <span class="custom-checkbox" aria-hidden="true"></span>
+                                <span class="checklist-text">Demano ajuda si apareix un problema (no ho he de fer sol/a).</span>
+                            </label>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             PANELL 3: PER A FAMÍLIES
+             ========================================================================== -->
+        <section id="panel-families" class="tab-panel" role="tabpanel" aria-labelledby="tab-families" tabindex="0">
+            <h2 class="sr-only">Recursos per a Famílies</h2>
+            
+            <div class="families-grid">
+                <!-- Bloc 1: Vida Quotidiana -->
+                <article class="card" style="margin-bottom:0;">
+                    <h3 class="section-title">🏡 Vida Quotidiana</h3>
+                    
+                    <div class="sub-bloc-title">Organitzar l'entorn personal</div>
+                    <ul class="families-list" style="margin-bottom:1.5rem;">
+                        <li>
+                            <strong>Estructures i rutines tranquil·les</strong>
+                            Crear petites estructures i rutines a casa que alliberin energia per a les decisions importants (ex: preparar la roba la nit abans, llistes de la compra compartides).
+                        </li>
+                    </ul>
+
+                    <div class="sub-bloc-title">Donar espais d'iniciativa</div>
+                    <ul class="families-list">
+                        <li>
+                            <strong>Incentivar la participació directa</strong>
+                            Fomentar que proposin plans o demanin de forma explícita allò que necessiten (com establir torns definits per parlar si hi ha una sobrecàrrega conversacional a taula).
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Bloc 2: Entorn Laboral -->
+                <article class="card" style="margin-bottom:0;">
+                    <h3 class="section-title">💼 Entorn Laboral</h3>
+                    
+                    <div class="sub-bloc-title">Preparació com a confiança</div>
+                    <ul class="families-list" style="margin-bottom:1.5rem;">
+                        <li>
+                            <strong>Planificació per escrit antelada</strong>
+                            Ajudar-los a preparar les reunions o dubtes per escrit el dia abans (estructurar punts de vista, anotar preguntes concretes).
+                        </li>
+                    </ul>
+
+                    <div class="sub-bloc-title">Rol actiu en equip</div>
+                    <ul class="families-list">
+                        <li>
+                            <strong>Fomentar tasques concretes i facturals</strong>
+                            Incentivar que facin preguntes obertes, assumeixin tasques molt definides (ex: encarregar-se de redactar el resum escrit d'una reunió) i facin visible la seva feina amb dades.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- Bloc 3: Taula de Suports Estratègics -->
+            <article class="card">
+                <h3 class="section-title">📊 Bloc 3: Taula de Suports Estratègics</h3>
+                <p style="margin-bottom:1.5rem; color:var(--text-muted);">El suport a l'autodeterminació no és invasiu; s'ha d'ajustar i reduir gradualment a mesura que el jove guanya seguretat:</p>
+                
+                <div class="table-responsive-container">
+                    <table class="suports-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 25%;">Tipus de Suport</th>
+                                <th scope="col">Descripció i Estratègies Concretes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Tipus de Suport"><strong>Suport Estructural</strong></td>
+                                <td data-label="Descripció">Donar les ordres del dia o protocols de funcionament per escrit 24 hores abans de les activitats.</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Tipus de Suport"><strong>Suport Tecnològic</strong></td>
+                                <td data-label="Descripció">Ús planificat d'aplicacions de gestió de tasques, agendes digitals compartides o recordatoris visuals personalitzats.</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Tipus de Suport"><strong>Suport Relacional</strong></td>
+                                <td data-label="Descripció">Disposar d'un mentor, tutor o company de referència (a la feina o estudi) que revisi els plans d'acció de manera pausada.</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Tipus de Suport"><strong>Suport Temporal</strong></td>
+                                <td data-label="Descripció">Acordar de comú acord que les decisions importants es processen en un termini de 24 hores, eliminant la pressió de respondre immediatament.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- MODAL DE SIMULACIÓ DE DESCÀRREGA -->
+    <div id="download-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-box">
+            <h3 id="modal-title" class="modal-title">Preparant descàrrega</h3>
+            <p id="modal-subtitle" style="color:var(--text-muted);">Generant Quadern d'Autodeterminació en format PDF...</p>
+            
+            <div class="modal-loader" aria-hidden="true">
+                <div id="modal-bar" class="modal-loader-bar"></div>
+            </div>
+            
+            <div id="modal-status" class="modal-status-text" aria-live="polite">0% completat</div>
+            
+            <button id="btn-close-modal" class="btn-modal-close">Tancar finestra</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Eines d'Autodeterminació. Creat per <span class="footer-tag">PauApps</span> amb criteris d'accessibilitat i inclusió cognitiva.</p>
+        <p>Desenvolupat per a joves amb <span class="footer-tag">Autisme</span> i les seves <span class="footer-tag">Famílies</span>.</p>
+    </footer>
+
+    <!-- LÒGICA JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ==========================================================================
+            // 1. SISTEMA DE GESTIÓ DE PESTANYES (ACCESSIBLE)
+            // ==========================================================================
+            const tabs = document.querySelectorAll('[role="tab"]');
+            const panels = document.querySelectorAll('[role="tabpanel"]');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    switchTab(tab);
+                });
+
+                // Control per teclat (fletxa esquerra i fletxa dreta per moure el focus)
+                tab.addEventListener('keydown', (e) => {
+                    const tabList = tab.closest('[role="tablist"]');
+                    const tabItems = Array.from(tabList.querySelectorAll('[role="tab"]'));
+                    const index = tabItems.indexOf(tab);
+                    
+                    let newIndex;
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                        newIndex = (index + 1) % tabItems.length;
+                        tabItems[newIndex].focus();
+                        switchTab(tabItems[newIndex]);
+                        e.preventDefault();
+                    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                        newIndex = (index - 1 + tabItems.length) % tabItems.length;
+                        tabItems[newIndex].focus();
+                        switchTab(tabItems[newIndex]);
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            function switchTab(selectedTab) {
+                // Desactivar totes les pestanyes i panells
+                tabs.forEach(tab => {
+                    tab.setAttribute('aria-selected', 'false');
+                    tab.setAttribute('tabindex', '-1');
+                });
+
+                panels.forEach(panel => {
+                    panel.classList.remove('active');
+                });
+
+                // Activar la pestanya clicada i el seu panell corresponent
+                selectedTab.setAttribute('aria-selected', 'true');
+                selectedTab.setAttribute('tabindex', '0');
+                
+                const targetPanelId = selectedTab.getAttribute('aria-controls');
+                const targetPanel = document.getElementById(targetPanelId);
+                targetPanel.classList.add('active');
+            }
+
+
+            // ==========================================================================
+            // 2. INTERACTIVITAT DEL SEMÀFOR DE L'AUTORREGULACIÓ (MÒDUL 2)
+            // ==========================================================================
+            const llums = {
+                vermell: document.getElementById('semafor-vermell'),
+                groc: document.getElementById('semafor-groc'),
+                verd: document.getElementById('semafor-verd')
+            };
+            const semaforFeedback = document.getElementById('semafor-feedback');
+
+            const missatgesSemafor = {
+                vermell: {
+                    icon: '🛑',
+                    text: 'PARO I RESPIRO<br><span style="font-size:1.15rem; font-weight:normal;">(Estic nerviós/a o col·lapsat/da).</span>',
+                    class: 'highlight-vermell'
+                },
+                groc: {
+                    icon: '⚠️',
+                    text: 'PENSO QUÈ PASSA<br><span style="font-size:1.15rem; font-weight:normal;">(Detecto què em posa nerviós/a o què em molesta).</span>',
+                    class: 'highlight-groga'
+                },
+                verd: {
+                    icon: '✅',
+                    text: 'ACTUO O EXPLICO<br><span style="font-size:1.15rem; font-weight:normal;">(Provo una solució o ho dic amb paraules i un to de veu tranquil).</span>',
+                    class: 'highlight-verda'
+                }
+            };
+
+            Object.keys(llums).forEach(color => {
+                llums[color].addEventListener('click', () => {
+                    // Actualitza estats actius del semàfor físic
+                    Object.keys(llums).forEach(c => {
+                        llums[c].classList.remove('active');
+                        llums[c].setAttribute('aria-pressed', 'false');
+                    });
+                    
+                    llums[color].classList.add('active');
+                    llums[color].setAttribute('aria-pressed', 'true');
+
+                    // Actualitza la caixa de text amb els missatges
+                    semaforFeedback.className = 'semafor-feedback-box ' + missatgesSemafor[color].class;
+                    semaforFeedback.innerHTML = `
+                        <div class="semafor-state-icon" aria-hidden="true">${missatgesSemafor[color].icon}</div>
+                        <p class="semafor-text">${missatgesSemafor[color].text}</p>
+                    `;
+                });
+            });
+
+
+            // ==========================================================================
+            // 3. CHECKLIST INTERACTIU D'AUTODETERMINACIÓ (MÒDUL 4)
+            // ==========================================================================
+            const checkboxes = document.querySelectorAll('.checklist-checkbox');
+            const progressBar = document.getElementById('progress-bar');
+            const progressPercent = document.getElementById('progress-percent');
+            const progressSummary = document.getElementById('progress-text-summary');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+
+            function updateProgress() {
+                const total = checkboxes.length;
+                const checkedCount = Array.from(checkboxes).filter(c => c.checked).length;
+                const percentage = Math.round((checkedCount / total) * 100);
+
+                // Actualització visual de la barra de progrés
+                progressBar.style.width = `${percentage}%`;
+                progressPercent.textContent = `${percentage}% completat`;
+                
+                // Missatge personalitzat segons el progrés
+                if (checkedCount === 0) {
+                    progressSummary.textContent = "Has completat 0 de 5 accions. Comença quan vulguis!";
+                    progressBar.style.backgroundColor = 'var(--primary)';
+                } else if (checkedCount === total) {
+                    progressSummary.innerHTML = "✨ <strong>Molt bé! Has completat tot el checklist d'autodeterminació!</strong>";
+                    progressBar.style.backgroundColor = 'var(--success)';
+                } else {
+                    progressSummary.textContent = `Has completat ${checkedCount} de ${total} accions. Vas pel bon camí!`;
+                    progressBar.style.backgroundColor = 'var(--primary)';
+                }
+            }
+
+
+            // ==========================================================================
+            // 4. SIMULADOR DE DESCÀRREGA DE PDF INTERACTIU
+            // ==========================================================================
+            const btnDownload = document.getElementById('btn-download');
+            const modalOverlay = document.getElementById('download-overlay') || document.getElementById('download-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalSubtitle = document.getElementById('modal-subtitle');
+            const modalBar = document.getElementById('modal-bar');
+            const modalStatus = document.getElementById('modal-status');
+            const btnCloseModal = document.getElementById('btn-close-modal');
+
+            btnDownload.addEventListener('click', () => {
+                // Reset de modal i obertura
+                modalOverlay.classList.add('active');
+                modalTitle.textContent = "Preparant descàrrega";
+                modalSubtitle.textContent = "Generant Quadern d'Autodeterminació en format PDF...";
+                modalBar.style.width = '0%';
+                modalStatus.textContent = "0% completat";
+                btnCloseModal.style.display = 'none';
+
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += 5;
+                    modalBar.style.width = `${progress}%`;
+                    modalStatus.textContent = `${progress}% completat`;
+
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        
+                        // Finalitzat amb èxit
+                        modalTitle.textContent = "✨ Descàrrega Enllestida";
+                        modalSubtitle.innerHTML = "S'ha iniciat la descàrrega del <strong>Quadern_Autodeterminacio_Joves.pdf</strong> al teu dispositiu de forma correcta.";
+                        modalStatus.textContent = "Fet!";
+                        btnCloseModal.style.display = 'inline-block';
+                        btnCloseModal.focus();
+
+                        // Simula la descàrrega creant un fitxer de text dummy al navegador
+                        triggerDummyDownload();
+                    }
+                }, 100);
+            });
+
+            btnCloseModal.addEventListener('click', () => {
+                modalOverlay.classList.remove('active');
+                btnDownload.focus();
+            });
+
+            // Permet tancar el modal prement la tecla Escape per a millorar l'accessibilitat cognitiva i física
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                    modalOverlay.classList.remove('active');
+                    btnDownload.focus();
+                }
+            });
+
+            function triggerDummyDownload() {
+                const textContent = "Aquest és un document simulat del Quadern d'Autodeterminació complet per a joves amb autisme i les seves famílies.\n\nContingut: Eines pràctiques d'autodeterminació, autoregulació i suport estratègic.";
+                const blob = new Blob([textContent], { type: 'application/pdf' }); // ho forcem com si fos un PDF per a l'experiència de l'usuari
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Quadern_Autodeterminacio_Joves.pdf';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+
+            // ==========================================================================
+            // 5. GESTIÓ DEL MODE D'ALT CONTRAST
+            // ==========================================================================
+            const btnContrast = document.getElementById('toggle-contrast');
+            const htmlElement = document.documentElement;
+
+            // Llegim preferència desada (si existeix)
+            if (localStorage.getItem('high-contrast') === 'true') {
+                htmlElement.classList.add('high-contrast');
+                btnContrast.innerHTML = '<span>👁️</span> <strong>Contrast Estàndard</strong>';
+            }
+
+            btnContrast.addEventListener('click', () => {
+                htmlElement.classList.toggle('high-contrast');
+                
+                const isHighContrast = htmlElement.classList.contains('high-contrast');
+                localStorage.setItem('high-contrast', isHighContrast);
+                
+                if (isHighContrast) {
+                    btnContrast.innerHTML = '<span>👁️</span> <strong>Contrast Estàndard</strong>';
+                } else {
+                    btnContrast.innerHTML = '<span>👁️</span> <strong>Contrast Alt</strong>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
