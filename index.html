@@ -690,7 +690,8 @@
         }
 
         /* Ocultamos visualmente la checkbox nativa de manera accesible para estilizarla completamente */
-        .checklist-checkbox {
+        .checklist-checkbox,
+        .family-checklist-checkbox {
             position: absolute;
             opacity: 0;
             width: 0;
@@ -712,13 +713,15 @@
             position: relative;
         }
 
-        .checklist-checkbox:focus-visible + .custom-checkbox {
+        .checklist-checkbox:focus-visible + .custom-checkbox,
+        .family-checklist-checkbox:focus-visible + .custom-checkbox {
             outline: 3px solid var(--focus-outline);
             outline-offset: 3px;
         }
 
         /* Checkbox en estado activo */
-        .checklist-checkbox:checked + .custom-checkbox {
+        .checklist-checkbox:checked + .custom-checkbox,
+        .family-checklist-checkbox:checked + .custom-checkbox {
             background-color: var(--success);
             border-color: var(--success);
         }
@@ -732,12 +735,14 @@
             display: none;
         }
 
-        .checklist-checkbox:checked + .custom-checkbox::after {
+        .checklist-checkbox:checked + .custom-checkbox::after,
+        .family-checklist-checkbox:checked + .custom-checkbox::after {
             display: block;
         }
 
         /* Efectes visuals a la fila sencera en estar validat */
-        .checklist-checkbox:checked ~ .checklist-text {
+        .checklist-checkbox:checked ~ .checklist-text,
+        .family-checklist-checkbox:checked ~ .checklist-text {
             color: var(--text-muted);
             text-decoration: line-through;
             opacity: 0.85;
