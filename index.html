@@ -1299,8 +1299,9 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Eines d'Autodeterminació. Creat per <span class="footer-tag">PauApps</span> amb criteris d'accessibilitat i inclusió cognitiva.</p>
+        <p>© 2026 Eines d'Autodeterminació. Creat amb criteris d'accessibilitat i inclusió cognitiva.</p>
         <p>Desenvolupat per a joves amb <span class="footer-tag">Autisme</span> i les seves <span class="footer-tag">Famílies</span>.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.85;">Web desenvolupada per <span class="footer-tag">PauApps</span></p>
     </footer>
 
     <!-- LÒGICA JAVASCRIPT -->
@@ -1480,8 +1481,8 @@
                         btnCloseModal.style.display = 'inline-block';
                         btnCloseModal.focus();
 
-                        // Simula la descàrrega creant un fitxer de text dummy al navegador
-                        triggerDummyDownload();
+                        // Inicia la descàrrega de l'arxiu PDF real
+                        triggerDownload();
                     }
                 }, 100);
             });
@@ -1499,17 +1500,13 @@
                 }
             });
 
-            function triggerDummyDownload() {
-                const textContent = "Aquest és un document simulat del Quadern d'Autodeterminació complet per a joves amb autisme i les seves famílies.\n\nContingut: Eines pràctiques d'autodeterminació, autoregulació i suport estratègic.";
-                const blob = new Blob([textContent], { type: 'application/pdf' }); // ho forcem com si fos un PDF per a l'experiència de l'usuari
-                const url = URL.createObjectURL(blob);
+            function triggerDownload() {
                 const a = document.createElement('a');
-                a.href = url;
+                a.href = 'Quadern_Autodeterminacio_Joves.pdf';
                 a.download = 'Quadern_Autodeterminacio_Joves.pdf';
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-                URL.revokeObjectURL(url);
             }
 
 
